@@ -1,0 +1,19 @@
+Projekt: Paketshop (Methoden der Programmierung)
+
+    - M. Ljubicic
+    - M. Mueller
+    - M. Ott
+    - M. Weigert
+    
+Entwicklungsumgebung: Eclipse (Java)
+Datenbank:            mySQL
+User Stories / Tasks: https://trello.com/board/software-projekt-paket-shop
+Burndown Charts:
+Dokumentation:        GitHub Wiki (https://github.com/MWeigert/Paketshop/wiki)
+Release Changelog:    README (GitHub)
+
+*******************************************************************************
+********************************** Change Log *********************************
+*******************************************************************************
+25.11.2011 MW Change Log erstellt.
+25.11.2011 MW User Stories von Scrummy in Trello überführt.
