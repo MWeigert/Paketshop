@@ -2,7 +2,7 @@ package db;
 
 import java.sql.*;
 
-
+//Weigert war hier
 public class MysqlConnection {
 	public static void main(String[] args) {
 		String serverName = "localhost";
