@@ -1,0 +1,24 @@
+Projekt: Paketshop (Methoden der Programmierung)
+
+    - M. Ljubicic (Farbe in Trello: Rot)
+    - M. Mueller  (Farbe in Trello: Lila)
+    - M. Ott      (Farbe in Trello: Gelb)
+    - M. Weigert  (Farbe in Trello: Blau)
+    
+Entwicklungsumgebung: Eclipse (Java)
+Datenbank:            mySQL
+User Stories / Tasks: https://trello.com/board/software-projekt-paket-shop/4ece8262d5b687fc752bda96
+Burndown Charts:
+Dokumentation:        GitHub Wiki (https://github.com/MWeigert/Paketshop/wiki)
+Release Changelog:    README (GitHub)
+
+*******************************************************************************
+********************************** Change Log *********************************
+*******************************************************************************
+
+25.11.2011 MW Change Log erstellt.
+25.11.2011 MW User Stories von Scrummy in Trello überführt.
+30.11.2011 ML Zusätzlichen Ordner additional_files erstellt, um zusätzliche (Binär-)Dateien auf dem Github-Wiki verlinken zu können
+30.11.2011 ML SQL-Insert Scripts für alle Tabellen erstellt (db/db_scripts)
+30.11.2011 ML SQL-Select Scripts für einige Tabellen erstellt (db/db_scripts)
+01.12.2011 MW Test Commit gerneriert.
