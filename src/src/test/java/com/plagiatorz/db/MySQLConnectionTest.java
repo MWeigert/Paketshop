@@ -1,4 +1,4 @@
-package src.test.java.com.plagiatorz.db;
+package com.plagiatorz.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,10 +20,14 @@ public class MySQLConnectionTest extends TestCase {
 			Connection connection = DriverManager.getConnection(dbUrl,
 					username, password);
 			connection.close();
+
+	        assertTrue( true );
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+	        assertTrue( false );
 		} catch (SQLException e) {
 			e.printStackTrace();
+	        assertTrue( false );
 		}
 	}
 }
