@@ -15,7 +15,7 @@ public class MySQLConnectionTest extends TestCase {
 		String username = "mdpAdmin";
 		String password = "mdppaketshop";
 		try {
-
+  
 			Class.forName(dbClass);
 			Connection connection = DriverManager.getConnection(dbUrl,
 					username, password);
