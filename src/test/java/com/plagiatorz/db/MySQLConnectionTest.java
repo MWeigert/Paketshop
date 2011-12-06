@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.plagiatorz.login.LoginObject;
+
 import junit.framework.TestCase;
 
 
@@ -44,6 +46,40 @@ public class MySQLConnectionTest extends TestCase {
 				e.printStackTrace();
 		        assertTrue( false );
 			}
+		}
+		
+	}
+	
+	public void testSuccessLogin() {
+
+        LoginObject lo = new LoginObject();
+        lo.setEmail("max@muster.ch");
+        lo.setPassword("passwort");
+        
+        Connection con = null;
+        try {
+			con =  MySQLConnection.getConnection(lo);
+			assertTrue(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			assertTrue(false);
+		}
+		MySQLConnection.connectionClose(con);
+	}
+	
+	public void testInvalidLogin() {
+
+        LoginObject lo = new LoginObject();
+        lo.setEmail("max@muster.ch");
+        lo.setPassword("ein falsches");
+
+        Connection con = null;
+        try {
+			con = MySQLConnection.getConnection(lo);
+			assertTrue(false);
+			MySQLConnection.connectionClose(con);
+		} catch (Exception e) {
+			assertTrue(true);
 		}
 	}
 }
