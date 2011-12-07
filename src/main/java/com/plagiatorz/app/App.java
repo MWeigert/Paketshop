@@ -1,8 +1,8 @@
 package com.plagiatorz.app;
 
-import java.sql.Connection;
-
-import com.plagiatorz.db.MySQLConnection;
+import com.plagiatorz.db.dao.AdressDAO;
+import com.plagiatorz.db.dao.factory.DAOFactory;
+import com.plagiatorz.db.dao.utility.DAOException;
 import com.plagiatorz.login.LoginObject;
 
 /**
@@ -15,16 +15,30 @@ public class App
     {
         LoginObject lo = new LoginObject();
         lo.setEmail("max@muster.ch");
-        lo.setPassword("ll");
-        Connection con = null;
+        lo.setPassword("passwort");
         
-        try {
-			con = MySQLConnection.getConnection(lo);
-			System.out.println("connection erfolgreich");
-		} catch (Exception e) {
+        DAOFactory daof = DAOFactory.getInstance();
+        System.out.println("DAOFactory successfull: " + daof);
+        
+		AdressDAO ad = daof.getAdressDAO();
+		System.out.println("adressDAO:"+ad);
+		
+		try {
+			ad.getAdressByEmail(lo, "max@muster.ch");
+		} catch (DAOException e) {
 			e.printStackTrace();
 		}
+//        Connection con = null;
+//        
+//        try {
+//			con = MySQLConnection.getConnection(lo);
+//			System.out.println("connection erfolgreich");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
-		MySQLConnection.connectionClose(con);
+//		MySQLConnection.connectionClose(con);
+        
+        
     }
 }
