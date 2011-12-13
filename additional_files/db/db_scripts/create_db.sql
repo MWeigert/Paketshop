@@ -36,7 +36,7 @@ CREATE TABLE Adresse(
 	Ort varchar(40) NOT NULL DEFAULT '',
 	Mobile varchar(16) NULL,
 	TelefonP varchar(16) NULL,
-	EMail varchar(50) NOT NULL DEFAULT '',
+	EMail varchar(50) UNIQUE NOT NULL DEFAULT '',
 	Passwort varchar(16) NOT NULL DEFAULT '',
 	AdressTyp int(2) unsigned NOT NULL DEFAULT '1',
 	FOREIGN KEY (AdressTyp) REFERENCES AdressTyp(Id),

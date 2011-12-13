@@ -6,7 +6,7 @@ Projekt: Paketshop (Methoden der Programmierung)
     - M. Weigert  (Farbe in Trello: Blau)
     
 Entwicklungsumgebung: Eclipse (Java)
-Datenbank:            mySQL
+Datenbank:            mySQL Version 5.0.77
 User Stories / Tasks: https://trello.com/board/software-projekt-paket-shop/4ece8262d5b687fc752bda96
 Burndown Charts:
 Dokumentation:        GitHub Wiki (https://github.com/MWeigert/Paketshop/wiki)
@@ -23,3 +23,4 @@ Release Changelog:    README (GitHub)
 30.11.2011 ML SQL-Select Scripts für einige Tabellen erstellt (db/db_scripts)
 01.12.2011 MW Test Commit gerneriert.
 01.12.2011 MO Test Commit generiert.
+13.12.2011 MO "Datenbank_Aufbau_Layout.xls" um Spalte "Unique" erweitert (wegen EMail-Adresse) / In "create_db.sql" die EMail-Adresse auf Unique gesetzt
