@@ -3,6 +3,7 @@ package com.plagiatorz.app;
 import com.plagiatorz.db.dao.AdressDAO;
 import com.plagiatorz.db.dao.factory.DAOFactory;
 import com.plagiatorz.db.dao.utility.DAOException;
+import com.plagiatorz.db.dto.AdressDTO;
 import com.plagiatorz.login.LoginObject;
 
 /**
@@ -11,34 +12,37 @@ import com.plagiatorz.login.LoginObject;
  */
 public class App 
 {
+	//TODO: unter Dropbox\MdP_Paketshop\00 Rahmenbedingungen daoProperties herunterladen und in das Rootverzeichnis kopieren
     public static void main( String[] args )
     {
-        LoginObject lo = new LoginObject();
-        lo.setEmail("max@muster.ch");
-        lo.setPassword("passwort");
-        
-        DAOFactory daof = DAOFactory.getInstance();
-        System.out.println("DAOFactory successfull: " + daof);
-        
-		AdressDAO ad = daof.getAdressDAO();
-		System.out.println("adressDAO:"+ad);
+    	  
+        DAOFactory daof = DAOFactory.getInstance();        
+		AdressDAO dao = daof.getAdressDAO();
 		
-		try {
-			ad.getAdressByEmail(lo, "max@muster.ch");
-		} catch (DAOException e) {
-			e.printStackTrace();
-		}
-//        Connection con = null;
-//        
-//        try {
-//			con = MySQLConnection.getConnection(lo);
-//			System.out.println("connection erfolgreich");
-//		} catch (Exception e) {
+//        LoginObject lo = new LoginObject();
+//        lo.setEmail("emil@mail.ch");
+//        lo.setPassword("passwort");
+//      
+//		
+//		try {
+//			AdressDTO dto = dao.getAdressByEmail(lo, "emil@mail.ch");
+////			System.err.println(dto.getId());
+//			System.err.println(lo.getEnrichedLoginData().getId());
+//		} catch (DAOException e) {
 //			e.printStackTrace();
 //		}
-		
-//		MySQLConnection.connectionClose(con);
-        
-        
+    	
+    	AdressDTO ad = new AdressDTO();
+    	ad.setEmail("emil@mail.ch");
+    	ad.setPasswort("passwort");
+    	ad.setName("Eine");
+    	ad.setVorname("Emil");
+    	
+    	try {
+			dao.createAdressWithoutAuthorisation(ad);
+		} catch (DAOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }

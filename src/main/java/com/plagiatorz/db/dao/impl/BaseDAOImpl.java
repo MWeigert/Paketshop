@@ -4,23 +4,26 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import com.plagiatorz.db.dao.BaseDAO;
 import com.plagiatorz.db.dao.factory.DAOFactory;
 import com.plagiatorz.db.dao.utility.DAOException;
 import com.plagiatorz.db.dao.utility.DaoUtil;
+import com.plagiatorz.db.dto.AdressDTO;
 import com.plagiatorz.login.LoginEnrichedData;
 import com.plagiatorz.login.LoginObject;
 
 public abstract class BaseDAOImpl implements BaseDAO{
 
+	private static final String CREATEADRESS = "INSERT INTO Adresse (name, vorname, strasse, strassenNr, zusatzzeile, land,"
+																  +"plz, ort, mobile, telefonp, email, passwort)";
     private DAOFactory daoFactory;
 
 	public BaseDAOImpl(DAOFactory daoFactory) {
 		super();
 		this.daoFactory = daoFactory;
 	}
-
 
 	public ResultSet executeSelect(LoginObject loginObj, String query, Object... values) throws DAOException {
         PreparedStatement preparedStatement = null;
@@ -38,7 +41,37 @@ public abstract class BaseDAOImpl implements BaseDAO{
 		}
 		return resultSet;
 	}
-	
+
+	public int createAdressWithoutAuthorisation(AdressDTO adress) throws DAOException {
+
+        Connection connection = daoFactory.getConnection();
+        int id = 0;
+        
+		try {
+			Statement statement = connection.createStatement(
+			        Statement.CLOSE_ALL_RESULTS, Statement.RETURN_GENERATED_KEYS);
+			StringBuilder sb = new StringBuilder(CREATEADRESS);
+			sb.append("VALUES('").append(adress.getName() == null ? "" : adress.getName())
+			.append("', '").append(adress.getVorname() == null ? "" : adress.getVorname())
+			.append("', '").append(adress.getStrasse() == null ? "" : adress.getStrasse())
+			.append("', '").append(adress.getStrassenNr() == null ? "" : adress.getStrassenNr())
+			.append("', '").append(adress.getZusatzzeile() == null ? "" : adress.getZusatzzeile())
+			.append("', '").append(adress.getLand() == null ? "" : adress.getLand())
+			.append("', '").append(adress.getPlz() == null ? "" : adress.getPlz())
+			.append("', '").append(adress.getOrt() == null ? "" : adress.getOrt())
+			.append("', '").append(adress.getMobile() == null ? "" : adress.getMobile())
+			.append("', '").append(adress.getTelefon() == null ? "" : adress.getTelefon())
+			.append("', '").append(adress.getEmail() == null ? "" : adress.getEmail())
+			.append("', '").append(adress.getPasswort() == null ? "" : adress.getPasswort()).append("')");
+			
+			id = statement.executeUpdate(sb.toString());
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return id;
+	}
 
     protected void checkLogin(Connection con, LoginObject lo) throws DAOException{
 		String query = "SELECT id, AdressTyp FROM Adresse WHERE email=? and passwort=?;";
@@ -50,10 +83,12 @@ public abstract class BaseDAOImpl implements BaseDAO{
 			statement.setString(2, lo.getPassword());
 			ResultSet resultSet = statement.executeQuery();
 			
-			while(resultSet.next()) {
-				int id = resultSet.getInt(1);
-				int adrType = resultSet.getInt(2);
-				lo.setEnrichedLoginData(new LoginEnrichedData(id, adrType));
+			if(lo.getEnrichedLoginData() == null) {
+				while(resultSet.next()) {
+					int id = resultSet.getInt(1);
+					int adrType = resultSet.getInt(2);
+					lo.setEnrichedLoginData(new LoginEnrichedData(id, adrType));
+				}
 			}
 			if(lo.getEnrichedLoginData() == null) {
 				con.close();

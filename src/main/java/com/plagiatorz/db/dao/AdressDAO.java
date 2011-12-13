@@ -7,4 +7,6 @@ import com.plagiatorz.login.LoginObject;
 public interface AdressDAO extends BaseDAO {
 
 	public AdressDTO getAdressByEmail(LoginObject lo, String email) throws DAOException;
+	
+	public void createAdress(LoginObject lo, AdressDTO adress) throws DAOException;
 }

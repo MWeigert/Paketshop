@@ -10,13 +10,15 @@ public class AdressDTO implements BaseDTO{
 	private String vorname;
 	private String strasse;
 	private String strassenNr;
-	private String zusatzteile;
+	private String zusatzzeile;
 	private String land;
 	private String plz;
 	private String ort;
 	private String mobile;
 	private String telefon;
 	private String email;
+	private String passwort;
+	private String adressTyp;
 	
 	public int getId() {
 		return id;
@@ -48,11 +50,11 @@ public class AdressDTO implements BaseDTO{
 	public void setStrassenNr(String strassenNr) {
 		this.strassenNr = strassenNr;
 	}
-	public String getZusatzteile() {
-		return zusatzteile;
+	public String getZusatzzeile() {
+		return zusatzzeile;
 	}
-	public void setZusatzteile(String zusatzteile) {
-		this.zusatzteile = zusatzteile;
+	public void setZusatzzeile(String zusatzteile) {
+		this.zusatzzeile = zusatzteile;
 	}
 	public String getLand() {
 		return land;
@@ -90,10 +92,35 @@ public class AdressDTO implements BaseDTO{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getPasswort() {
+		return passwort;
+	}
+	public void setPasswort(String passwort) {
+		this.passwort = passwort;
+	}
+	public String getAdressTyp() {
+		return adressTyp;
+	}
+	public void setAdressTyp(String adressTyp) {
+		this.adressTyp = adressTyp;
+	}
 	@Override
 	public void fillUpRecord(ResultSet result) throws SQLException {
 		//TODO alle abfüllen
 		id = result.getInt(1);
+		name = result.getString(2);
+		vorname = result.getString(3);
+		strasse = result.getString(4);
+		strassenNr = result.getString(5);
+		zusatzzeile = result.getString(6);
+		land = result.getString(7);
+		plz = result.getString(8);
+		ort = result.getString(9);
+		mobile = result.getString(10);
+		telefon = result.getString(11);
+		email = result.getString(12);
+		passwort = null;
+		
 	}
 	
 }

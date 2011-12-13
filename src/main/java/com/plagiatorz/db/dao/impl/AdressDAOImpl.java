@@ -7,9 +7,14 @@ import com.plagiatorz.db.dao.AdressDAO;
 import com.plagiatorz.db.dao.factory.DAOFactory;
 import com.plagiatorz.db.dao.utility.DAOException;
 import com.plagiatorz.db.dto.AdressDTO;
+import com.plagiatorz.global.Constants;
+import com.plagiatorz.login.LoginEnrichedData;
 import com.plagiatorz.login.LoginObject;
 
 public class AdressDAOImpl extends BaseDAOImpl implements AdressDAO{
+	
+	private static final String GETADRESSBYEMAIL = "SELECT * FROM Adresse where email=?";
+	
 	
 	public AdressDAOImpl(DAOFactory daoFactory) {
 		super(daoFactory);
@@ -19,9 +24,8 @@ public class AdressDAOImpl extends BaseDAOImpl implements AdressDAO{
 	public AdressDTO getAdressByEmail(LoginObject lo, String email) throws DAOException {
 		
 		AdressDTO retVal = new AdressDTO();
-		String query = "SELECT * FROM Adresse where email=?";
 		
-		ResultSet rs = super.executeSelect(lo, query, new Object[]{email});
+		ResultSet rs = super.executeSelect(lo, GETADRESSBYEMAIL, new Object[]{email});
 		
 		try {
 			while(rs.next()) {
@@ -32,6 +36,16 @@ public class AdressDAOImpl extends BaseDAOImpl implements AdressDAO{
 		}
 		
 		return retVal;
+	}
+
+	@Override
+	public void createAdress(LoginObject lo, AdressDTO adress) throws DAOException {
+
+		int id = super.createAdressWithoutAuthorisation(adress);
+		
+		lo.setEmail(adress.getEmail());
+		lo.setPassword(adress.getPasswort());
+		lo.setEnrichedLoginData(new LoginEnrichedData(id, Constants.DEFAULTADRESSTYP));
 	}
     
 }
