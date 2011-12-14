@@ -3,7 +3,7 @@ package com.plagiatorz.db.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.plagiatorz.db.dao.utility.DAOException;
+import com.plagiatorz.db.dao.exception.DAOException;
 import com.plagiatorz.db.dto.AdressDTO;
 import com.plagiatorz.login.LoginObject;
 

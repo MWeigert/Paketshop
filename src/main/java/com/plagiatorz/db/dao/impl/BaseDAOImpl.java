@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.plagiatorz.db.dao.BaseDAO;
+import com.plagiatorz.db.dao.exception.DAOException;
 import com.plagiatorz.db.dao.factory.DAOFactory;
-import com.plagiatorz.db.dao.utility.DAOException;
 import com.plagiatorz.db.dao.utility.DaoUtil;
 import com.plagiatorz.db.dto.AdressDTO;
 import com.plagiatorz.login.LoginEnrichedData;
@@ -40,6 +40,37 @@ public abstract class BaseDAOImpl implements BaseDAO{
 			throw new DAOException(e);
 		}
 		return resultSet;
+	}
+	public int createRecord(LoginObject loginObj, String query, Object... values) throws DAOException {
+
+        Connection connection = daoFactory.getConnection();
+        int id = 0;
+        
+		try {
+			Statement statement = connection.createStatement(
+			        Statement.CLOSE_ALL_RESULTS, Statement.RETURN_GENERATED_KEYS);
+			StringBuilder sb = new StringBuilder(query);
+			sb.append("VALUES(");
+			for(Object val :values){
+				if(val == null) {
+					sb.append("null,");
+				}
+				else if(val instanceof String) {
+					sb.append("'").append(val).append("',");
+				}
+				else {
+					sb.append(val).append(",");
+				}
+			}
+			sb.replace(sb.length()-1, sb.length(), ")"); //letztes "," durch ein ")" ersetzen
+			System.out.println(sb);
+			id = statement.executeUpdate(sb.toString());
+			
+		} catch (SQLException e) {
+			throw new DAOException(e.getCause());
+		}
+		
+		return id;
 	}
 
 	public int createAdressWithoutAuthorisation(AdressDTO adress) throws DAOException {

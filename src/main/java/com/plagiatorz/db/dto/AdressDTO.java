@@ -3,6 +3,11 @@ package com.plagiatorz.db.dto;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.commons.lang.StringUtils;
+
+import com.plagiatorz.db.dao.exception.ValidationException;
+import com.plagiatorz.global.Utils;
+
 public class AdressDTO implements BaseDTO{
 
 	private int id;
@@ -121,6 +126,37 @@ public class AdressDTO implements BaseDTO{
 		email = result.getString(12);
 		passwort = null;
 		
+	}
+	@Override
+	public void validate() throws ValidationException {
+		
+		if(StringUtils.isEmpty(name)){
+			throw new ValidationException("Name leer");
+		}
+		else if(StringUtils.isEmpty(vorname)){
+			throw new ValidationException("Vorname leer");
+		}
+		else if(StringUtils.isEmpty(strasse)){
+			throw new ValidationException("Strasse leer");
+		}
+		else if(StringUtils.isEmpty(strassenNr)){
+			throw new ValidationException("Strassen Nummer leer");
+		}
+		else if(StringUtils.isEmpty(plz)){
+			throw new ValidationException("PLZ leer");
+		}
+		else if(StringUtils.isEmpty(ort)){
+			throw new ValidationException("Ort leer");
+		}
+		else if(StringUtils.isEmpty(land)){
+			throw new ValidationException("Land leer");
+		}
+		else if(StringUtils.isEmpty(email)){
+			throw new ValidationException("Emailadresse leer");
+		}
+		else if(Utils.checkRegex(email,  "\\w+@\\w+.\\w+")) {
+			throw new ValidationException("Ungültige Emailadresse");
+		}
 	}
 	
 }

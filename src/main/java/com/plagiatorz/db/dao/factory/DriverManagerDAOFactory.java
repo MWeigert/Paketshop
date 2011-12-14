@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import com.plagiatorz.db.dao.utility.DAOException;
+import com.plagiatorz.db.dao.exception.DAOException;
 
 class DriverManagerDAOFactory extends DAOFactory {
     private String url;

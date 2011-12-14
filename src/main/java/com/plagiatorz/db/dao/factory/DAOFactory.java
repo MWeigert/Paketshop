@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import com.plagiatorz.db.dao.AdressDAO;
+import com.plagiatorz.db.dao.PaketDAO;
+import com.plagiatorz.db.dao.exception.DAOConfigurationException;
+import com.plagiatorz.db.dao.exception.DAOException;
 import com.plagiatorz.db.dao.impl.AdressDAOImpl;
-import com.plagiatorz.db.dao.utility.DAOConfigurationException;
-import com.plagiatorz.db.dao.utility.DAOException;
+import com.plagiatorz.db.dao.impl.PaketDAOImpl;
 import com.plagiatorz.db.dao.utility.DAOProperties;
 
 public abstract class DAOFactory {
@@ -47,6 +49,10 @@ public abstract class DAOFactory {
 
     public AdressDAO getAdressDAO() {
         return new AdressDAOImpl(this);
+    }
+    
+    public PaketDAO getPaketDAO() {
+        return new PaketDAOImpl(this);
     }
 
 }
