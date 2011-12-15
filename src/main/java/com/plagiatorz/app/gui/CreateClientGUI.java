@@ -11,18 +11,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.plagiatorz.db.dao.AdressDAO;
-import com.plagiatorz.db.dao.exception.DAOException;
-import com.plagiatorz.db.dao.exception.ValidationException;
-import com.plagiatorz.db.dao.factory.DAOFactory;
-import com.plagiatorz.db.dto.AdressDTO;
-import com.plagiatorz.login.LoginObject;
+import com.plagiatorz.app.actions.SaveAdress;
+import com.plagiatorz.app.bean.AdressBean;
 
 /**
  * @author MWeigert
@@ -31,6 +24,8 @@ import com.plagiatorz.login.LoginObject;
 public class CreateClientGUI {
 	
 	private JFrame frame = new JFrame("Kunde erfassen");
+	private AdressBean adressBean = new AdressBean();
+	private SaveAdress save = new SaveAdress(adressBean);
 
 	public void createClientFrame() {
 		// Allgemeiner Teil Frame und Panel werden erstellt & konfiguriert
@@ -59,13 +54,13 @@ public class CreateClientGUI {
 		// Zweite Zeile mit Feldern zu Name & Vorname
 		gc.gridy = 1;
 		gc.gridx = 0;
-		final JTextField nameFld = new JTextField();
-		panel.add(nameFld, gc);
+//		final JTextField nameFld = new JTextField();
+//		nameFld.setName(adressBean.getName());
+		panel.add(adressBean.getName(), gc);
 		
 		gc.gridx = 10;
 		gc.gridwidth = 10;
-		final JTextField vornameFld = new JTextField();
-		panel.add(vornameFld, gc);
+		panel.add(adressBean.getVorname(), gc);
 		
 		// Dritte Zeile mit Label zu Strasse & Hausnummer
 		gc.gridx = 0;
@@ -83,13 +78,11 @@ public class CreateClientGUI {
 		gc.gridy = 3;
 		gc.gridx = 0;
 		gc.gridwidth = 16;
-		final JTextField strasseFld = new JTextField();
-		panel.add(strasseFld, gc);
+		panel.add(adressBean.getStrasse(), gc);
 		
 		gc.gridx = 15;
 		gc.gridwidth = 3;
-		final JTextField nrFld = new JTextField();
-		panel.add(nrFld, gc);
+		panel.add(adressBean.getStrassenNr(), gc);
 		
 		// Fünfte Zeile mit Label Adress Zusatz
 		gc.gridy = 4;
@@ -100,8 +93,7 @@ public class CreateClientGUI {
 		
 		// Sechste Zeile mit Feld Adress Zusatz
 		gc.gridy = 5;
-		JTextField zusatzFld = new JTextField();
-		panel.add(zusatzFld, gc);
+		panel.add(adressBean.getZusatzzeile(), gc);
 		
 		// Siebte Zeile mit den Labeln Land, PLZ und Ort
 		gc.gridx = 0;
@@ -124,18 +116,15 @@ public class CreateClientGUI {
 		gc.gridx = 0;
 		gc.gridy = 7;
 		gc.gridwidth = 1;
-		final JTextField landFld = new JTextField();
-		panel.add(landFld, gc);
+		panel.add(adressBean.getLand(), gc);
 		
 		gc.gridx = 3;
 		gc.gridwidth = 2;
-		final JTextField plzFld = new JTextField();
-		panel.add(plzFld, gc);
+		panel.add(adressBean.getPlz(), gc);
 		
 		gc.gridx = 6;
 		gc.gridwidth = 14;
-		final JTextField ortFld = new JTextField();
-		panel.add(ortFld, gc);
+		panel.add(adressBean.getOrt(), gc);
 		
 		// Neunte Zeile Leerzeile
 		gc.gridx = 0;
@@ -153,8 +142,7 @@ public class CreateClientGUI {
 		// Elfte Zeile Feld Telefonnummer
 		gc.gridx = 0;
 		gc.gridy = 10;
-		final JTextField phoneFld = new JTextField();
-		panel.add(phoneFld, gc);
+		panel.add(adressBean.getTelefon(), gc);
 		
 		// Zwölfte Zeile Label Handy Nummer
 		gc.gridx = 0;
@@ -165,8 +153,7 @@ public class CreateClientGUI {
 		// Dreizehnte Zeile Feld Handy Nummer
 		gc.gridx = 0;
 		gc.gridy = 12;
-		final JTextField handyFld = new JTextField();
-		panel.add(handyFld, gc);
+		panel.add(adressBean.getMobile(), gc);
 		
 		// Vierzehnte Zeile Label E-Mail
 		gc.gridx = 0;
@@ -177,8 +164,7 @@ public class CreateClientGUI {
 		// Fünfzehnte Zeile Feld E-Mail
 		gc.gridx = 0;
 		gc.gridy = 14;
-		final JTextField mailFld = new JTextField();
-		panel.add(mailFld, gc);
+		panel.add(adressBean.getEmail(), gc);
 		
 		// Sechszehnte Zeile Leerzeile
 		gc.gridx = 0;
@@ -196,8 +182,7 @@ public class CreateClientGUI {
 		// Achzehnte Zeile Field Passwort
 		gc.gridx = 0;
 		gc.gridy = 17;
-		final JPasswordField pwdFld = new JPasswordField();
-		panel.add(pwdFld, gc);
+		panel.add(adressBean.getPasswort(), gc);
 		
 		
 		// Neunzehnte Zeile Leerzeile
@@ -222,45 +207,8 @@ public class CreateClientGUI {
 		
 		gc.gridx = 11;
 		JButton createBtn = new JButton("Create");
-		createBtn.addActionListener(new ActionListener() {
+		createBtn.addActionListener(save);
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				AdressDTO adress = new AdressDTO();
-				adress.setName(nameFld.getText());
-				adress.setVorname(vornameFld.getText());
-				adress.setStrasse(strasseFld.getText());
-				adress.setStrassenNr(nrFld.getText());
-				adress.setLand(landFld.getText());
-				adress.setPlz(plzFld.getText());
-				adress.setOrt(ortFld.getText());
-				adress.setTelefon(phoneFld.getText());
-				adress.setMobile(handyFld.getText());
-				adress.setEmail(mailFld.getText());
-				adress.setPasswort(pwdFld.getText());
-				try {
-					adress.validate();
-
-					DAOFactory factory = DAOFactory.getInstance();
-					AdressDAO dao = factory.getAdressDAO();
-					LoginObject lo = new LoginObject();
-					lo.setEmail("emil@mail.ch");
-					lo.setPassword("passwort");
-					
-					try {
-						dao.createAdress(lo, adress);
-						JOptionPane.showMessageDialog(null, "User efolgreich angelegt", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
-					} catch (DAOException e1) {
-						e1.printStackTrace();
-					}
-				} catch (ValidationException e2) {
-					JOptionPane.showMessageDialog(null, e2.getMessage(), "Fehlerhafte eingabe", JOptionPane.ERROR_MESSAGE);
-				}
-				
-				
-//				frame.dispose();
-			}
-		});
 		panel.add(createBtn, gc);
 		
 		// Frame added Panel und wird sichtbar
