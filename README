@@ -5,12 +5,11 @@ Projekt: Paketshop (Methoden der Programmierung)
     - M. Ott      (Farbe in Trello: Gelb)
     - M. Weigert  (Farbe in Trello: Blau)
     
-Entwicklungsumgebung: Eclipse (Java)
-Datenbank:            mySQL Version 5.0.77
-User Stories / Tasks: https://trello.com/board/software-projekt-paket-shop/4ece8262d5b687fc752bda96
-Burndown Charts:
-Dokumentation:        GitHub Wiki (https://github.com/MWeigert/Paketshop/wiki)
-Release Changelog:    README (GitHub)
+Entwicklungsumgebung:             Eclipse (Java)
+Datenbank:                        mySQL Version 5.0.77
+User Stories / Tasks / Burndown:  https://www.pivotaltracker.com/projects/434403#
+Dokumentation:                    GitHub Wiki (https://github.com/MWeigert/Paketshop/wiki)
+Release Changelog:                README (GitHub)
 
 *******************************************************************************
 ********************************** Change Log *********************************
@@ -24,3 +23,5 @@ Release Changelog:    README (GitHub)
 01.12.2011 MW Test Commit gerneriert.
 01.12.2011 MO Test Commit generiert.
 13.12.2011 MO "Datenbank_Aufbau_Layout.xls" um Spalte "Unique" erweitert (wegen EMail-Adresse) / In "create_db.sql" die EMail-Adresse auf Unique gesetzt
+14.12.2011 ML Änderung des Projekttools von Trello nach Pivotal
+15.12.2011 ML Pivotal-Link auch noch im README angepasst *grrr*
