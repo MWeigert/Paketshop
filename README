@@ -2,6 +2,7 @@ Projekt: Paketshop (Methoden der Programmierung)
 
     
 Entwicklungsumgebung:             Eclipse (Java)
+GUI-Entwurf:			  https://zhaw.mybalsamiq.com/projects/mdp_paketshop
 Datenbank:                        mySQL Version 5.0.77
 User Stories / Tasks / Burndown:  https://www.pivotaltracker.com/projects/434403#
 Dokumentation:                    GitHub Wiki (https://github.com/MWeigert/Paketshop/wiki)
@@ -21,3 +22,5 @@ Release Changelog:                README (GitHub)
 13.12.2011 MO "Datenbank_Aufbau_Layout.xls" um Spalte "Unique" erweitert (wegen EMail-Adresse) / In "create_db.sql" die EMail-Adresse auf Unique gesetzt
 14.12.2011 ML Änderung des Projekttools von Trello nach Pivotal
 15.12.2011 ML Pivotal-Link auch noch im README angepasst *grrr*
+20.12.2011 MO Berechtigungskonzept erstellt und DB angepasst
+20.12.2011 MO GUI-Entwürfe im Balsamiq

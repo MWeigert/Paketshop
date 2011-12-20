@@ -167,4 +167,17 @@ CREATE TABLE RgZgJournal(
 	created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated timestamp NOT NULL DEFAULT '0000-00-00'
 )
+
+
+CREATE TABLE Berechtigung(
+	Id int(2) unsigned NOT NULL auto_increment PRIMARY KEY,
+	Gruppe int(7) unsigned NOT NULL DEFAULT '0',
+	FOREIGN KEY (Gruppe) REFERENCES AdressTyp(Id),
+	Tabelle varchar(15) NOT NULL DEFAULT '',
+	Feld varchar(15) NOT NULL DEFAULT '',
+	Action varchar(15) NOT NULL DEFAULT '',
+	created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updated timestamp NOT NULL DEFAULT '0000-00-00'
+)
+
 ENGINE = INNODB;
