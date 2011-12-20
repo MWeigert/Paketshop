@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public final class DaoUtil {
 
@@ -20,7 +23,7 @@ public final class DaoUtil {
 	    throws SQLException
 	{
 	    for (int i = 0; i < values.length; i++) {
-	        preparedStatement.setObject(i + 1, values[i]);
+	        preparedStatement.setObject(i + 1, DaoUtil.fillUpValue(values[i]));
 	    }
 	}
 	
@@ -33,5 +36,23 @@ public final class DaoUtil {
 	            e.printStackTrace();
 	        }
 	    }
+	}
+	
+	public static Object fillUpValue(Object value) {
+		
+		if(value == null) {
+			return "null";
+		}
+		else if(value instanceof String) {
+			return "'"+value+"'";
+		}
+		else if(value instanceof Date) {
+			Date d = (Date) value;
+			Calendar cal = new GregorianCalendar();
+			cal.setTime(d);
+			
+			return "STR_TO_DATE('"+cal.get(Calendar.DAY_OF_MONTH)+"."+cal.get(Calendar.MONTH)+"."+cal.get(Calendar.YEAR)+"', '%d.%m.%Y')";
+		}
+		return value;
 	}
 }

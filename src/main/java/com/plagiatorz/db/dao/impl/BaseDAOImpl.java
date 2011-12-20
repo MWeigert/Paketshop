@@ -14,6 +14,12 @@ import com.plagiatorz.db.dto.AdressDTO;
 import com.plagiatorz.login.LoginEnrichedData;
 import com.plagiatorz.login.LoginObject;
 
+/**
+ * Alle DB-Zugriffe sollten im BaseDAOImpl durchgeführt werden,
+ * um Standarts wie Autorisierung zu gewährleisten
+ * @author MARIUS
+ *
+ */
 public abstract class BaseDAOImpl implements BaseDAO{
 
 	private static final String CREATEADRESS = "INSERT INTO Adresse (name, vorname, strasse, strassenNr, zusatzzeile, land,"
@@ -25,6 +31,15 @@ public abstract class BaseDAOImpl implements BaseDAO{
 		this.daoFactory = daoFactory;
 	}
 
+	/**
+	 * 1. autorisierungs-Chek
+	 * 2. Query mit Werten abfüllen
+	 * 3. Query ausführen und ResultSet zurückgeben
+	 * @param LoginObject LoginDaten
+	 * @param query Im spezifischen DAO definierte DB-Query
+	 * @param Filter-Werte der Query
+	 * @return ResultSet
+	 */
 	public ResultSet executeSelect(LoginObject loginObj, String query, Object... values) throws DAOException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -41,29 +56,33 @@ public abstract class BaseDAOImpl implements BaseDAO{
 		}
 		return resultSet;
 	}
+	
+	/**
+	 * 1. autorisierungs-Chek
+	 * 2. Query mit Werten abfüllen
+	 * 3. Query create ausführen
+	 * @param LoginObject LoginDaten
+	 * @param query Im spezifischen DAO definierte Insert-Query
+	 * @param Werte, die hinzugefügt werden müssen
+	 * @return id des neuen Records
+	 */
 	public int createRecord(LoginObject loginObj, String query, Object... values) throws DAOException {
 
         Connection connection = daoFactory.getConnection();
         int id = 0;
         
 		try {
+        	checkLogin(connection, loginObj);
+        	
 			Statement statement = connection.createStatement(
 			        Statement.CLOSE_ALL_RESULTS, Statement.RETURN_GENERATED_KEYS);
 			StringBuilder sb = new StringBuilder(query);
 			sb.append("VALUES(");
 			for(Object val :values){
-				if(val == null) {
-					sb.append("null,");
-				}
-				else if(val instanceof String) {
-					sb.append("'").append(val).append("',");
-				}
-				else {
-					sb.append(val).append(",");
-				}
+				sb.append(DaoUtil.fillUpValue(val)).append(",");
 			}
 			sb.replace(sb.length()-1, sb.length(), ")"); //letztes "," durch ein ")" ersetzen
-			System.out.println(sb);
+
 			id = statement.executeUpdate(sb.toString());
 			
 		} catch (SQLException e) {
@@ -72,7 +91,11 @@ public abstract class BaseDAOImpl implements BaseDAO{
 		
 		return id;
 	}
-
+	/**
+	 * Benutzer mit den übergebenen Werten erstellen
+	 * @param AdressDTO Adresswerte
+	 * @return id des neuen Records
+	 */
 	public int createAdressWithoutAuthorisation(AdressDTO adress) throws DAOException {
 
         Connection connection = daoFactory.getConnection();
