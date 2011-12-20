@@ -1,0 +1,25 @@
+Die Tabelle 'Berechtigung' enthält für jeden AdressTyp (Kunde / User / Superuser / Developper) Datensätze mit den erlaubten Funktionen:
+
+Variante mit Feld
+-----------------
+AdressTyp:	1
+Tabelle:	Adresse
+Feld:		Name
+Action:		<null>
+
+Variante mit Funktion
+---------------------
+AdressTyp:	2
+Tabelle:	Adresse
+Feld:		<null>
+Action:		Erfassen
+
+...
+
+- Die Abfrage erfolgt gem. dem angemeldeten Benutzer (resp. des. Adresstyps)
+
+- Der Adresstyp 4 (Developper) ist von sämtlichen Einschränkungen ohne Einträge in der Tabelle 'Berechtigung' für alles freigeschalten
+
+-> So wird grundsätzlich jede (neue) Funktion bis zur expliziten Freigabe gesperrt. Auch kann jedes einzelne Feld resp. einzelne Funktion individuell pro Gruppe gesperrt werden
+
+
