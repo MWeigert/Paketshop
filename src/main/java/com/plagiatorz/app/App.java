@@ -1,6 +1,5 @@
 package com.plagiatorz.app;
 
-import java.util.Date;
 import java.util.List;
 
 import com.plagiatorz.db.dao.AdressDAO;

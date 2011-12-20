@@ -1,10 +1,11 @@
 package com.plagiatorz.app;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import com.plagiatorz.global.Utils;
 
-import junit.framework.TestCase;
-
-public class UtilTest extends TestCase{
+public class UtilTest{
 
 	public void testSuccessRegexEmail() {
 		assertTrue(Utils.checkRegex("asdf@lkj.ch", "\\w+@\\w+\\.\\w+"));

@@ -3,6 +3,12 @@ package com.plagiatorz.db.dto;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * AdressDTO
+ * !Achtung: PW wird aus Sicherheitsgründen nicht abgefüllt
+ * @author MARIUS
+ *
+ */
 public class AdressDTO implements BaseDTO{
 
 	private int id;

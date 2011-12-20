@@ -1,24 +1,13 @@
 package com.plagiatorz.app;
 
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 import com.plagiatorz.app.bean.AdressBean;
 import com.plagiatorz.db.dao.exception.ValidationException;
 
-public class AdressBeanTest extends TestCase{
-
-	public AdressBeanTest( String testName )
-    {
-        super( testName );
-    }
-    
-    public static TestSuite suite()
-    {
-        return new TestSuite( AdressBeanTest.class );
-    }
+public class AdressBeanTest {
 
 	@Test
 	public void testSuccessValidation() {
