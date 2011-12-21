@@ -2,6 +2,11 @@ package startProgramm;
 
 import com.plagiatorz.app.gui.CreateClientGUI;
 
+/**
+ * Programmstart, öffnet das GUI
+ * @author MARIUS
+ *
+ */
 public class Start {
 
 	/**

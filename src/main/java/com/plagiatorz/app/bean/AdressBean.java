@@ -5,7 +5,7 @@ import javax.swing.JTextField;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.plagiatorz.db.dao.exception.ValidationException;
+import com.plagiatorz.db.dto.exception.ValidationException;
 import com.plagiatorz.global.Utils;
 
 public class AdressBean implements BaseBean {

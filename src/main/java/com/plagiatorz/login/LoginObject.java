@@ -1,5 +1,10 @@
 package com.plagiatorz.login;
 
+/**
+ * Die vom User ausgefüllten Logininformationen (email,pw)
+ * @author MARIUS
+ *
+ */
 public class LoginObject {
 
 	private LoginEnrichedData enrichedLoginData;

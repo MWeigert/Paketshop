@@ -8,8 +8,22 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/**
+ * Utility Klasse für DB-Calls
+ * @author MARIUS
+ *
+ */
 public final class DaoUtil {
 
+	/**
+	 * Vervollständigt den DB-Call
+	 * @param connection
+	 * @param sql
+	 * @param returnGeneratedKeys
+	 * @param values
+	 * @return
+	 * @throws SQLException
+	 */
     public static PreparedStatement prepareStatement
     (Connection connection, String sql, boolean returnGeneratedKeys, Object... values)
         throws SQLException
@@ -19,7 +33,14 @@ public final class DaoUtil {
 	    setValues(preparedStatement, values);
 	    return preparedStatement;
 	}
-	    public static void setValues(PreparedStatement preparedStatement, Object... values)
+	    
+    /**
+     * Füllt alle Values der REIHE nach in die Query
+     * @param preparedStatement
+     * @param values
+     * @throws SQLException
+     */
+    public static void setValues(PreparedStatement preparedStatement, Object... values)
 	    throws SQLException
 	{
 	    for (int i = 0; i < values.length; i++) {
@@ -38,6 +59,14 @@ public final class DaoUtil {
 	    }
 	}
 	
+	/**
+	 * gibt den Wert DB-Spezifisch zurück
+	 *  1. String: '<value>'
+	 *  2. Date-Bsp: STR_TO_DATE('10.10.2011', (%d.%m.%Y')
+	 *  3. Rest unverändert
+	 * @param value
+	 * @return
+	 */
 	public static Object fillUpValue(Object value) {
 		
 		if(value == null) {

@@ -1,5 +1,10 @@
 package com.plagiatorz.db.dao.exception;
 
+/**
+ * Alle möglichen Übergabemasken eines DB-Fehlers (z.B. nicht berechtigt)
+ * @author MARIUS
+ *
+ */
 public class DAOException extends Exception {
 
     /**

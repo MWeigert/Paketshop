@@ -4,6 +4,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
+/**
+ * 
+ * @author MARIUS
+ *
+ */
 public class PaketDTO implements BaseDTO{
 
 	private int kundenId;

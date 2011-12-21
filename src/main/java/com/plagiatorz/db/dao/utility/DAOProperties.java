@@ -7,9 +7,13 @@ import java.util.Properties;
 
 import com.plagiatorz.db.dao.exception.DAOConfigurationException;
 
+/**
+ * Liest beim Verbindungsaufbau alle benötigten Daten aus dem "daoProperties"-File,
+ * welches sich im Root-Verzeichnis des Projekts befinden muss
+ * @author MARIUS
+ *
+ */
 public class DAOProperties {
-
-    // Constants ----------------------------------------------------------------------------------
 
     private static final String PROPERTIES_FILE = "daoProperties";
     private static final Properties PROPERTIES = new Properties();
