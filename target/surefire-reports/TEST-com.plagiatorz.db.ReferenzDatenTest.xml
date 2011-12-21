@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.515" errors="0" skipped="0" tests="4" name="com.plagiatorz.db.ReferenzDatenTest">
+<testsuite failures="0" time="1.124" errors="0" skipped="0" tests="4" name="com.plagiatorz.db.ReferenzDatenTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_23\jre\bin"/>
@@ -9,37 +9,37 @@
     <property name="path.separator" value=";"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.country" value="DE"/>
+    <property name="user.country" value="CH"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\MARIUS\workspace\paketShop"/>
+    <property name="user.dir" value="C:\Users\MWEigert\workspace\Paketshop\Paketshop"/>
     <property name="java.runtime.version" value="1.6.0_23-b05"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="basedir" value="C:\Users\MARIUS\workspace\paketShop"/>
+    <property name="basedir" value="C:\Users\MWEigert\workspace\Paketshop\Paketshop"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_23\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="C:\Users\MARIUS\workspace\paketShop\target\surefire\surefirebooter2371052925140065972.jar"/>
-    <property name="java.io.tmpdir" value="C:\Users\MARIUS\AppData\Local\Temp\"/>
+    <property name="surefire.real.class.path" value="C:\Users\MWEigert\workspace\Paketshop\Paketshop\target\surefire\surefirebooter6088517854404040544.jar"/>
+    <property name="java.io.tmpdir" value="C:\Users\MWEigert\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_23\jre\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2011b\bin;C:\Program Files\Apache Software Foundation\apache-maven-3.0.3\bin;%JAVA_HOME%\bin;$M2:$PATH"/>
-    <property name="surefire.test.class.path" value="C:\Users\MARIUS\workspace\paketShop\target\test-classes;C:\Users\MARIUS\workspace\paketShop\target\classes;C:\Users\MARIUS\.m2\repository\junit\junit\4.8.1\junit-4.8.1.jar;C:\Users\MARIUS\.m2\repository\org\easymock\easymock\2.0\easymock-2.0.jar;C:\Users\MARIUS\.m2\repository\mysql\mysql-connector-java\5.1.18\mysql-connector-java-5.1.18.jar;C:\Users\MARIUS\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_23\jre\bin;.;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;d:\oracle\11.2.0\CLIENT\bin;d:\oracle\11.2.0\DATABASE\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;c:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;C:\Program Files\ActivIdentity\ActivClient\;C:\Program Files (x86)\ActivIdentity\ActivClient\;c:\Program Files\Hewlett-Packard\Drive Encryption\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\Norman\Npm\Bin;C:\Program Files (x86)\Windows Live\Shared;D:\MatLab\bin;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;%M2%;%JAVA_HOME%\bin;C:\Program Files (x86)\Business Objects\BusinessObjects Enterprise 12.0\win32_x86;C:\Program Files (x86)\Astaro\Astaro SSL VPN Client\bin;C:\Program Files (x86)\Android\android-sdk\tools;C:\Program Files\Apache Software Foundation\apache-maven-3.0.3\bin"/>
+    <property name="surefire.test.class.path" value="C:\Users\MWEigert\workspace\Paketshop\Paketshop\target\test-classes;C:\Users\MWEigert\workspace\Paketshop\Paketshop\target\classes;C:\Users\MWEigert\.m2\repository\junit\junit\4.8.1\junit-4.8.1.jar;C:\Users\MWEigert\.m2\repository\org\easymock\easymock\2.0\easymock-2.0.jar;C:\Users\MWEigert\.m2\repository\mysql\mysql-connector-java\5.1.18\mysql-connector-java-5.1.18.jar;C:\Users\MWEigert\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Server Compiler"/>
     <property name="os.version" value="6.1"/>
-    <property name="user.home" value="C:\Users\MARIUS"/>
+    <property name="user.home" value="C:\Users\MWEigert"/>
     <property name="user.timezone" value="Europe/Berlin"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.6"/>
     <property name="file.encoding" value="Cp1252"/>
-    <property name="user.name" value="MARIUS"/>
-    <property name="java.class.path" value="C:\Users\MARIUS\workspace\paketShop\target\test-classes;C:\Users\MARIUS\workspace\paketShop\target\classes;C:\Users\MARIUS\.m2\repository\junit\junit\4.8.1\junit-4.8.1.jar;C:\Users\MARIUS\.m2\repository\org\easymock\easymock\2.0\easymock-2.0.jar;C:\Users\MARIUS\.m2\repository\mysql\mysql-connector-java\5.1.18\mysql-connector-java-5.1.18.jar;C:\Users\MARIUS\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;"/>
+    <property name="user.name" value="MWeigert"/>
+    <property name="java.class.path" value="C:\Users\MWEigert\workspace\Paketshop\Paketshop\target\test-classes;C:\Users\MWEigert\workspace\Paketshop\Paketshop\target\classes;C:\Users\MWEigert\.m2\repository\junit\junit\4.8.1\junit-4.8.1.jar;C:\Users\MWEigert\.m2\repository\org\easymock\easymock\2.0\easymock-2.0.jar;C:\Users\MWEigert\.m2\repository\mysql\mysql-connector-java\5.1.18\mysql-connector-java-5.1.18.jar;C:\Users\MWEigert\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;"/>
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_23\jre"/>
@@ -48,10 +48,10 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="1.6.0_23"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_23\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_23\jre\lib\ext;C:\windows\Sun\Java\lib\ext"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_23\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_23\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_23\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_23\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_23\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_23\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_23\jre\lib\modules\jdk.boot.jar;C:\Program Files\Java\jdk1.6.0_23\jre\classes"/>
     <property name="java.vendor" value="Sun Microsystems Inc."/>
-    <property name="localRepository" value="C:\Users\MARIUS\.m2\repository"/>
+    <property name="localRepository" value="C:\Users\MWEigert\.m2\repository"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -59,8 +59,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.296" classname="com.plagiatorz.db.ReferenzDatenTest" name="testPaketStatus"/>
-  <testcase time="0.078" classname="com.plagiatorz.db.ReferenzDatenTest" name="testMahnStatus"/>
-  <testcase time="0.063" classname="com.plagiatorz.db.ReferenzDatenTest" name="testLager"/>
+  <testcase time="0.718" classname="com.plagiatorz.db.ReferenzDatenTest" name="testPaketStatus"/>
+  <testcase time="0.14" classname="com.plagiatorz.db.ReferenzDatenTest" name="testMahnStatus"/>
+  <testcase time="0.172" classname="com.plagiatorz.db.ReferenzDatenTest" name="testLager"/>
   <testcase time="0.078" classname="com.plagiatorz.db.ReferenzDatenTest" name="testKategorien"/>
 </testsuite>
