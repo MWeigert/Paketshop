@@ -1,6 +1,6 @@
 package com.plagiatorz.app.bean;
 
-import com.plagiatorz.db.dto.exception.ValidationException;
+import com.plagiatorz.app.exception.ValidationException;
 
 public interface BaseBean {
 

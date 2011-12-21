@@ -8,11 +8,11 @@ import javax.swing.JOptionPane;
 import org.apache.commons.lang.StringUtils;
 
 import com.plagiatorz.app.bean.AdressBean;
+import com.plagiatorz.app.exception.ValidationException;
 import com.plagiatorz.db.dao.AdressDAO;
 import com.plagiatorz.db.dao.exception.DAOException;
 import com.plagiatorz.db.dao.factory.DAOFactory;
 import com.plagiatorz.db.dto.AdressDTO;
-import com.plagiatorz.db.dto.exception.ValidationException;
 import com.plagiatorz.global.Constants;
 import com.plagiatorz.login.LoginObject;
 

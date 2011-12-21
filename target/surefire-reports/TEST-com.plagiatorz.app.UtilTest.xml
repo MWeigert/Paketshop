@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.016" errors="0" skipped="0" tests="4" name="com.plagiatorz.app.UtilTest">
+<testsuite failures="0" time="0.01" errors="0" skipped="0" tests="4" name="com.plagiatorz.app.UtilTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_23\jre\bin"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="C:\Users\MWEigert\workspace\Paketshop\Paketshop"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_23\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="C:\Users\MWEigert\workspace\Paketshop\Paketshop\target\surefire\surefirebooter6088517854404040544.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\MWEigert\workspace\Paketshop\Paketshop\target\surefire\surefirebooter2945857172674935435.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\MWEigert\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -61,6 +61,6 @@
   </properties>
   <testcase time="0" classname="com.plagiatorz.app.UtilTest" name="testSuccessRegexEmail"/>
   <testcase time="0" classname="com.plagiatorz.app.UtilTest" name="testFailRegexEmail"/>
-  <testcase time="0.016" classname="com.plagiatorz.app.UtilTest" name="testDaoUtilFillUpValStr"/>
+  <testcase time="0.01" classname="com.plagiatorz.app.UtilTest" name="testDaoUtilFillUpValStr"/>
   <testcase time="0" classname="com.plagiatorz.app.UtilTest" name="testDaoUtilFillUpDate"/>
 </testsuite>

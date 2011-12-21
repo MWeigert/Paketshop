@@ -1,5 +1,10 @@
-package com.plagiatorz.db.dao.exception;
+package com.plagiatorz.app.exception;
 
+/**
+ * Alle möglichen Übergabemasken eines Validierungs-Fehlers (z.B. Pflichtfeld ist leer)
+ * @author MARIUS
+ *
+ */
 public class ValidationException extends Exception {
 
     /**

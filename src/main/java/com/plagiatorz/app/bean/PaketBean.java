@@ -3,7 +3,7 @@ package com.plagiatorz.app.bean;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
-import com.plagiatorz.db.dto.exception.ValidationException;
+import com.plagiatorz.app.exception.ValidationException;
 
 public class PaketBean implements BaseBean {
 

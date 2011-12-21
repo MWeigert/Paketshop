@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import com.plagiatorz.app.bean.AdressBean;
-import com.plagiatorz.db.dto.exception.ValidationException;
+import com.plagiatorz.app.exception.ValidationException;
 
 public class AdressBeanTest {
 
