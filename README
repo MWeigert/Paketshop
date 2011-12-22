@@ -13,14 +13,15 @@ Release Changelog:                README (GitHub)
 *******************************************************************************
 
 25.11.2011 MW Change Log erstellt.
-25.11.2011 MW User Stories von Scrummy in Trello überführt.
-30.11.2011 ML Zusätzlichen Ordner additional_files erstellt, um zusätzliche (Binär-)Dateien auf dem Github-Wiki verlinken zu können
-30.11.2011 ML SQL-Insert Scripts für alle Tabellen erstellt (db/db_scripts)
-30.11.2011 ML SQL-Select Scripts für einige Tabellen erstellt (db/db_scripts)
+25.11.2011 MW User Stories von Scrummy in Trello ï¿½berfï¿½hrt.
+30.11.2011 ML Zusï¿½tzlichen Ordner additional_files erstellt, um zusï¿½tzliche (Binï¿½r-)Dateien auf dem Github-Wiki verlinken zu kï¿½nnen
+30.11.2011 ML SQL-Insert Scripts fï¿½r alle Tabellen erstellt (db/db_scripts)
+30.11.2011 ML SQL-Select Scripts fï¿½r einige Tabellen erstellt (db/db_scripts)
 01.12.2011 MW Test Commit gerneriert.
 01.12.2011 MO Test Commit generiert.
 13.12.2011 MO "Datenbank_Aufbau_Layout.xls" um Spalte "Unique" erweitert (wegen EMail-Adresse) / In "create_db.sql" die EMail-Adresse auf Unique gesetzt
-14.12.2011 ML Änderung des Projekttools von Trello nach Pivotal
+14.12.2011 ML ï¿½nderung des Projekttools von Trello nach Pivotal
 15.12.2011 ML Pivotal-Link auch noch im README angepasst *grrr*
 20.12.2011 MO Berechtigungskonzept erstellt und DB angepasst
-20.12.2011 MO GUI-Entwürfe im Balsamiq
+20.12.2011 MO GUI-Entwï¿½rfe im Balsamiq
+21.12.2011 MW Balsamiq Einladungen (durch MO) an alle beteiligten raus.
