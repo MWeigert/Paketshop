@@ -3,8 +3,8 @@
 -- Kurs:    Methoden der Programmierung
 -- Author:  Miro Ljubicic
 -- Version: 0.1
--- Date:    20.12.2011
--- Zweck:   Nachträglich die Kundenangaben mutieren
+-- Date:    20.12.2011 
+-- Zweck:   Nachträglich die Kundenangaben mutieren       
 ----------------------------------------------
 
 
