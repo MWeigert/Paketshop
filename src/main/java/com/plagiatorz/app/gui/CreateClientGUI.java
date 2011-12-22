@@ -18,7 +18,7 @@ import com.plagiatorz.app.actions.SaveAdress;
 import com.plagiatorz.app.bean.AdressBean;
 
 /**
- * @author MWeigert
+ * @author Plagiatorz
  *
  */
 public class CreateClientGUI {
