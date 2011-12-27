@@ -3,6 +3,8 @@ package com.plagiatorz.global;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.plagiatorz.login.LoginObject;
+
 public final class Utils {
 	/**
 	 * Kontrolliert, ob der Value die im Regex angegebenen Regeln einhält 
@@ -14,5 +16,14 @@ public final class Utils {
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(value);
 		return m.matches();
+	}
+	
+	public static LoginObject getLoginObject() {
+
+		LoginObject lo = new LoginObject();
+		lo.setEmail(System.getProperty(Constants.EMAILPROPERTY));
+		lo.setPassword(System.getProperty(Constants.PWPROPERTY));
+		
+		return lo;
 	}
 }

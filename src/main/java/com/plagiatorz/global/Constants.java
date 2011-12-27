@@ -10,4 +10,12 @@ public final class Constants {
 	public final static int DEFAULTADRESSTYP = 1;
 	
 	public final static String LOGINERROR = "Login fehlgeschlagen";
+	
+	//System-Variablen
+	public final static String EMAILPROPERTY = "loginEmail";
+	public final static String PWPROPERTY = "loginPW";
+	
+	//Navigation-Möglichkeiten
+	public final static String EDITUSER = "User bearbeiten";
+	public final static String ADDPAKET ="Paket hinzufügen";
 }

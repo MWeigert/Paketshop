@@ -2,6 +2,9 @@ package com.plagiatorz.app;
 
 import static org.junit.Assert.assertTrue;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import org.junit.Test;
 
 import com.plagiatorz.app.bean.AdressBean;
@@ -102,7 +105,7 @@ public class AdressBeanTest {
 	
     private AdressBean createAdrBean() {
     	
-    	AdressBean bean = new AdressBean();
+    	AdressBean bean = new AdressBean(new JFrame(), new JPanel());
 		bean.getEmail().setText("a4b@asdf.ch");
 		bean.getName().setText("name");
 		bean.getVorname().setText("aa");

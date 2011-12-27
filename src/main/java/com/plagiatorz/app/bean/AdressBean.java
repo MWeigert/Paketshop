@@ -1,5 +1,8 @@
 package com.plagiatorz.app.bean;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -8,7 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import com.plagiatorz.app.exception.ValidationException;
 import com.plagiatorz.global.Utils;
 
-public class AdressBean implements BaseBean {
+public class AdressBean extends BaseBean {
 
 	private JTextField name = new JTextField();
 	private JTextField vorname = new JTextField();
@@ -22,11 +25,12 @@ public class AdressBean implements BaseBean {
 	private JTextField telefon = new JTextField();
 	private JTextField email = new JTextField();
 	private JPasswordField passwort = new JPasswordField();
+	private JButton saveBtn = new JButton("Create");
 
 	
 	
-	public AdressBean() {
-		super();
+	public AdressBean(JFrame jFrame, JPanel jPanel) {
+		super(jFrame, jPanel);
 	}
 
 	public JTextField getName() {
@@ -123,6 +127,24 @@ public class AdressBean implements BaseBean {
 
 	public void setPasswort(JPasswordField passwort) {
 		this.passwort = passwort;
+	}
+	
+	public JButton getSaveBtn() {
+		return saveBtn;
+	}
+
+	public void setSaveBtn(JButton saveBtn) {
+		this.saveBtn = saveBtn;
+	}
+
+	public String getPasswortVal(){
+		char[] pwChar = passwort.getPassword();
+		StringBuilder sb = new StringBuilder();
+		for(char c : pwChar) {
+			sb.append(c);
+		}
+
+		return sb.toString();
 	}
 
 	@Override

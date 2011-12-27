@@ -1,4 +1,4 @@
-package com.plagiatorz.app.actions;
+package com.plagiatorz.app.actions.actionListener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,8 +14,15 @@ import com.plagiatorz.db.dao.exception.DAOException;
 import com.plagiatorz.db.dao.factory.DAOFactory;
 import com.plagiatorz.db.dto.AdressDTO;
 import com.plagiatorz.global.Constants;
-import com.plagiatorz.login.LoginObject;
 
+/**
+ * Speichert die neue Adresse
+ * 1. Validierung (Popup mit Fehlerbeschreib, falls fehlgeschlagen)
+ * 2. DTO abfuellen
+ * 3. Save-Funktion aufrufen
+ * @author Plagiatorz
+ *
+ */
 public class SaveAdress implements ActionListener {
 
 	private AdressBean adressBean;
@@ -44,22 +51,14 @@ public class SaveAdress implements ActionListener {
 			adress.setOrt(adressBean.getOrt().getText());
 			adress.setTelefon(adressBean.getTelefon().getText());
 			adress.setMobile(adressBean.getMobile().getText());
-			adress.setEmail(adressBean.getEmail().getText());		
-			char[] pwChar = adressBean.getPasswort().getPassword();
-			StringBuilder sb = new StringBuilder();
-			for(char c : pwChar) {
-				sb.append(c);
-			}
-			adress.setPasswort(sb.toString());
-	
+			adress.setEmail(adressBean.getEmail().getText());
+			adress.setPasswort(adressBean.getPasswortVal());
+			
 			DAOFactory factory = DAOFactory.getInstance();
 			AdressDAO dao = factory.getAdressDAO();
-			LoginObject lo = new LoginObject();
-			lo.setEmail("emil@mail.ch");
-			lo.setPassword("passworttt");
 			
 			try {
-				dao.createAdress(lo, adress);
+				dao.createAdress(null, adress);
 				JOptionPane.showMessageDialog(null, "User efolgreich angelegt", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
 			} catch (DAOException e1) {
 				if(StringUtils.equals(Constants.LOGINERROR, e1.getMessage())) {

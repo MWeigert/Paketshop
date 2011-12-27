@@ -72,9 +72,10 @@ public final class DaoUtil {
 		if(value == null) {
 			return "null";
 		}
-		else if(value instanceof String) {
-			return "'"+value+"'";
-		}
+		//TODO nicht nötig?
+//		else if(value instanceof String) {
+//			return "'"+value+"'";
+//		}
 		else if(value instanceof Date) {
 			Date d = (Date) value;
 			Calendar cal = new GregorianCalendar();

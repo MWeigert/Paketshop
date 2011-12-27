@@ -1,23 +1,25 @@
 package com.plagiatorz.app.bean;
 
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.plagiatorz.app.exception.ValidationException;
 
-public class PaketBean implements BaseBean {
+public class PaketBean extends BaseBean {
 
 	private JTextField kunde = new JTextField();
 	private JComboBox kategorie = new JComboBox();
 	private JComboBox status = new JComboBox();
 	private JComboBox lager = new JComboBox();
 	
-	public PaketBean() {
-		super();
+	public PaketBean(JFrame frame, JPanel contentPanel) {
+		super(frame, contentPanel);
 	}
 	
-	public PaketBean(JComboBox kategorie, JComboBox status) {
-		super();
+	public PaketBean(JFrame frame, JPanel contentPanel, JComboBox kategorie, JComboBox status) {
+		super(frame, contentPanel);
 		this.kategorie = kategorie;
 		this.status = status;
 	}

@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import com.plagiatorz.db.dao.AdressDAO;
+import com.plagiatorz.db.dao.LoginDAO;
 import com.plagiatorz.db.dao.PaketDAO;
 import com.plagiatorz.db.dao.ReferenzDAO;
 import com.plagiatorz.db.dao.exception.DAOConfigurationException;
 import com.plagiatorz.db.dao.exception.DAOException;
 import com.plagiatorz.db.dao.impl.AdressDAOImpl;
+import com.plagiatorz.db.dao.impl.LoginDAOImpl;
 import com.plagiatorz.db.dao.impl.PaketDAOImpl;
 import com.plagiatorz.db.dao.impl.ReferenzDAOImpl;
 import com.plagiatorz.db.dao.utility.DAOProperties;
@@ -59,5 +61,9 @@ public abstract class DAOFactory {
 
     public ReferenzDAO getReferenzDAO() {
         return new ReferenzDAOImpl(this);
+    }
+
+    public LoginDAO getLoginDAO() {
+        return new LoginDAOImpl(this);
     }
 }
