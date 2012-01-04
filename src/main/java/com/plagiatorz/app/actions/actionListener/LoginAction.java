@@ -50,6 +50,10 @@ public class LoginAction implements ActionListener {
 				dao.login(lo);
 			    System.setProperty(Constants.EMAILPROPERTY, lo.getEmail());
 			    System.setProperty(Constants.PWPROPERTY, lo.getPassword());
+			    
+				JOptionPane.showMessageDialog(null, "Guten Tag "+lo.getEmail(), "Erfolgreiche Anmeldung", JOptionPane.INFORMATION_MESSAGE);
+				bean.getEmail().setText("");
+				bean.getPasswort().setText("");
 
 			} catch (DAOException e) {
 				JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);

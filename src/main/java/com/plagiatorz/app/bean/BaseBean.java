@@ -9,7 +9,8 @@ import com.plagiatorz.app.exception.ValidationException;
 
 /**
  * baseKlasse zur sicherstellung, dass jedes Bean eine Validate-Methode besitzt
- * beinhaltet das LoginObject
+ * beim Init wird der contentPanel im frame geloescht
+ * beinhaltet das frame und den contentPanle
  * @author MARIUS
  *
  */
@@ -19,6 +20,11 @@ public abstract class BaseBean {
 	private JPanel contentPanel = new JPanel();
 	private NaviBar menuBar = new NaviBar();
 
+	/**
+	 * contentpanel wird aus dem Frame geloescht, damit das neue GUI dieses benutzen kann
+	 * @param frame
+	 * @param contentPanel
+	 */
 	public BaseBean(JFrame frame, JPanel contentPanel) {
 		super();
 		this.frame = frame;
@@ -53,6 +59,9 @@ public abstract class BaseBean {
 		return menuBar;
 	}
 
+	/**
+	 * Defaultanzeige, contentPanel wird dem Frame hinzugefuegt und angezeigt
+	 */
 	public void setFrameVisible(){
 		frame.add(contentPanel);
 //		frame.setSize(300, 400);

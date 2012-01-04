@@ -5,6 +5,10 @@ import java.util.regex.Pattern;
 
 import com.plagiatorz.login.LoginObject;
 
+/**
+ * Helperklasse, liest unter anderem die Daten, mit der der User sich eingeloggt hat, aus dem System
+ * @author MARIUS
+ */
 public final class Utils {
 	/**
 	 * Kontrolliert, ob der Value die im Regex angegebenen Regeln einhält 

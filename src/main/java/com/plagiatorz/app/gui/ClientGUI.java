@@ -15,6 +15,8 @@ import com.plagiatorz.app.actions.actionListener.SaveAdress;
 import com.plagiatorz.app.bean.AdressBean;
 
 /**
+ * Anzeige der Adresse
+ * Wird aufgerufen, beim erfassen eines neuen Kunden, sowie beim Editieren eines bestehenden
  * @author Plagiatorz
  *
  */

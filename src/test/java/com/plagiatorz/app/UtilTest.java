@@ -27,7 +27,7 @@ public class UtilTest{
 	
 	@Test
 	public void testDaoUtilFillUpValStr() {
-		assertEquals("'str'", DaoUtil.fillUpValue("str"));
+		assertEquals("str", DaoUtil.fillUpValue("str"));
 	}
 	
 	@Test
