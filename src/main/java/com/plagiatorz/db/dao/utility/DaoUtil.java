@@ -9,19 +9,19 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * Utility Klasse für DB-Calls
+ * Utility Klasse fuer DB-Calls
  * @author MARIUS
  *
  */
 public final class DaoUtil {
 
 	/**
-	 * Vervollständigt den DB-Call
+	 * Vervollstaendigt den DB-Call
 	 * @param connection
 	 * @param sql
 	 * @param returnGeneratedKeys
 	 * @param values
-	 * @return
+	 * @return statement komplett vorbereitetes Statement
 	 * @throws SQLException
 	 */
     public static PreparedStatement prepareStatement
@@ -35,7 +35,7 @@ public final class DaoUtil {
 	}
 	    
     /**
-     * Füllt alle Values der REIHE nach in die Query
+     * Fuellt alle Values der REIHE nach in die Query
      * @param preparedStatement
      * @param values
      * @throws SQLException
@@ -48,6 +48,10 @@ public final class DaoUtil {
 	    }
 	}
 	
+    /**
+     * schliesst die bestehende connection
+     * @param connection
+     */
 	public static void close(Connection connection) {
 	    if (connection != null) {
 	        try {
@@ -60,19 +64,19 @@ public final class DaoUtil {
 	}
 	
 	/**
-	 * gibt den Wert DB-Spezifisch zurück
+	 * gibt den Wert DB-Spezifisch zurueck
 	 *  1. String: '<value>'
 	 *  2. Date-Bsp: STR_TO_DATE('10.10.2011', (%d.%m.%Y')
-	 *  3. Rest unverändert
+	 *  3. Rest unveraendert
 	 * @param value
-	 * @return
+	 * @return value dem Datentyp angepasster value
 	 */
 	public static Object fillUpValue(Object value) {
 		
 		if(value == null) {
 			return "null";
 		}
-		//TODO nicht nötig?
+		//TODO nicht noetig?
 //		else if(value instanceof String) {
 //			return "'"+value+"'";
 //		}

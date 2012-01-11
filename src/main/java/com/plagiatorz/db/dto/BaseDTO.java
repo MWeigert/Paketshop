@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Interface für alle DTO's stellt sicher, dass das DTO mit einem ResultSet abgefüllt werden kann
+ * Interface fuer alle DTO's stellt sicher, dass das DTO mit einem ResultSet abgefuellt werden kann
  * @author MARIUS
  *
  */

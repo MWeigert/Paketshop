@@ -112,7 +112,7 @@ public class AdressBeanTest {
 		bean.getStrasse().setText("l");
 		bean.getStrassenNr().setText("10c");
 		bean.getPlz().setText("8000");
-		bean.getOrt().setText("Zürich");
+		bean.getOrt().setText("Zuerich");
 		bean.getLand().setText("CH");
 		return bean;
     }

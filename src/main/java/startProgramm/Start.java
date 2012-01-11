@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import com.plagiatorz.app.gui.LoginGUI;
 
 /**
- * Programmstart, öffnet das GUI
+ * Programmstart, oeffnet das GUI
  * @author MARIUS
  *
  */

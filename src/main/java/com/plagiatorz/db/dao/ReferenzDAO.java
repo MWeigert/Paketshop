@@ -7,7 +7,7 @@ import com.plagiatorz.db.dto.ValuePairDTO;
 import com.plagiatorz.login.LoginObject;
 
 /**
- * DAO für Referenzdaten, generell ohne zusätzliche WHERE einschränkungen
+ * DAO fuer Referenzdaten, generell ohne zusaetzliche WHERE einschraenkungen
  * @author MARIUS
  *
  */
@@ -16,7 +16,7 @@ public interface ReferenzDAO extends BaseDAO {
 	/**
 	 * 
 	 * @param lo
-	 * @return Liste mit allen gültigen PaketKategorien
+	 * @return Liste mit allen gueltigen PaketKategorien
 	 * @throws DAOException
 	 */
 	public List<ValuePairDTO> getAllPaketKategorien(LoginObject lo) throws DAOException;
@@ -24,7 +24,7 @@ public interface ReferenzDAO extends BaseDAO {
 	/**
 	 * 
 	 * @param lo
-	 * @return Liste mit allen möglichen Paket Status
+	 * @return Liste mit allen moeglichen Paket Status
 	 * @throws DAOException
 	 */
 	public List<ValuePairDTO> getAllPaketStatus(LoginObject lo) throws DAOException;
@@ -32,7 +32,7 @@ public interface ReferenzDAO extends BaseDAO {
 	/**
 	 * 
 	 * @param lo
-	 * @return Liste mit allen möglichen Mahn Status
+	 * @return Liste mit allen moeglichen Mahn Status
 	 * @throws DAOException
 	 */
 	public List<ValuePairDTO> getAllMahnStatus(LoginObject lo) throws DAOException;
@@ -40,7 +40,7 @@ public interface ReferenzDAO extends BaseDAO {
 	/**
 	 * 
 	 * @param lo
-	 * @return Liste mit verfügbaren Lager
+	 * @return Liste mit verfuegbaren Lager
 	 * @throws DAOException
 	 */
 	public List<ValuePairDTO> getAllLager(LoginObject lo) throws DAOException;

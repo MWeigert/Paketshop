@@ -11,10 +11,10 @@ import com.plagiatorz.login.LoginObject;
  */
 public final class Utils {
 	/**
-	 * Kontrolliert, ob der Value die im Regex angegebenen Regeln einhält 
+	 * Kontrolliert, ob der Value die im Regex angegebenen Regeln einhaelt 
 	 * @param value
 	 * @param regex
-	 * @return
+	 * @return ergebnis true, falls regex erfuellt, sonst false
 	 */
 	public static boolean checkRegex(String value, String regex) {
 		Pattern p = Pattern.compile(regex);
@@ -22,6 +22,10 @@ public final class Utils {
 		return m.matches();
 	}
 	
+	/**
+	 * holt die login-Informationen aus den System-Properties und fuellt sie in ein LoginObject ab
+	 * @return lo
+	 */
 	public static LoginObject getLoginObject() {
 
 		LoginObject lo = new LoginObject();

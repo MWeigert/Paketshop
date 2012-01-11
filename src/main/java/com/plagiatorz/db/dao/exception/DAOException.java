@@ -1,7 +1,7 @@
 package com.plagiatorz.db.dao.exception;
 
 /**
- * Alle möglichen Übergabemasken eines DB-Fehlers (z.B. nicht berechtigt)
+ * Alle moeglichen uebergabemasken eines DB-Fehlers (z.B. nicht berechtigt)
  * @author MARIUS
  *
  */

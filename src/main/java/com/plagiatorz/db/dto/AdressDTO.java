@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 /**
  * AdressDTO
- * !Achtung: PW wird aus Sicherheitsgründen nicht abgefüllt
+ * !Achtung: PW wird aus Sicherheitsgruenden nicht abgefuellt
  * @author MARIUS
  *
  */
@@ -112,7 +112,6 @@ public class AdressDTO implements BaseDTO{
 	}
 	@Override
 	public void fillUpRecord(ResultSet result) throws SQLException {
-		//TODO alle abfüllen
 		id = result.getInt(1);
 		name = result.getString(2);
 		vorname = result.getString(3);

@@ -15,8 +15,8 @@ import com.plagiatorz.login.LoginEnrichedData;
 import com.plagiatorz.login.LoginObject;
 
 /**
- * Alle DB-Zugriffe sollten im BaseDAOImpl durchgeführt werden,
- * um Standarts wie Autorisierung zu gewährleisten
+ * Alle DB-Zugriffe sollten im BaseDAOImpl durchgefuehrt werden,
+ * um Standarts wie Autorisierung zu gewaehrleisten
  * @author MARIUS
  *
  */
@@ -33,11 +33,11 @@ public abstract class BaseDAOImpl implements BaseDAO{
 
 	/**
 	 * 1. autorisierungs-Chek
-	 * 2. Query mit Werten abfüllen
-	 * 3. Query ausführen und ResultSet zurückgeben
-	 * @param LoginObject LoginDaten
+	 * 2. Query mit Werten abfuellen
+	 * 3. Query ausfuehren und ResultSet zurueckgeben
+	 * @param loginObj LoginDaten
 	 * @param query Im spezifischen DAO definierte DB-Query
-	 * @param Filter-Werte der Query
+	 * @param values Filter-Werte der Query
 	 * @return ResultSet
 	 */
 	public ResultSet executeSelect(LoginObject loginObj, String query, Object... values) throws DAOException {
@@ -59,11 +59,11 @@ public abstract class BaseDAOImpl implements BaseDAO{
 	
 	/**
 	 * 1. autorisierungs-Chek
-	 * 2. Query mit Werten abfüllen
-	 * 3. Query create ausführen
-	 * @param LoginObject LoginDaten
+	 * 2. Query mit Werten abfuellen
+	 * 3. Query create ausfuehren
+	 * @param loginObj LoginDaten
 	 * @param query Im spezifischen DAO definierte Insert-Query
-	 * @param Werte, die hinzugefügt werden müssen
+	 * @param values Werte, die hinzugefuegt werden muessen
 	 * @return id des neuen Records
 	 */
 	public int createRecord(LoginObject loginObj, String query, Object... values) throws DAOException {
@@ -92,8 +92,8 @@ public abstract class BaseDAOImpl implements BaseDAO{
 		return id;
 	}
 	/**
-	 * Benutzer mit den übergebenen Werten erstellen
-	 * @param AdressDTO Adresswerte
+	 * Benutzer mit den uebergebenen Werten erstellen
+	 * @param adress Adresswerte
 	 * @return id des neuen Records
 	 */
 	public int createAdressWithoutAuthorisation(AdressDTO adress) throws DAOException {
@@ -127,7 +127,14 @@ public abstract class BaseDAOImpl implements BaseDAO{
 		return id;
 	}
 
-    protected void checkLogin(Connection con, LoginObject lo) throws DAOException{
+	/**
+	 * Testet, ob Username/PW stimmen
+	 * Muss vor jedem DB-Zugriff ueberprueft werden, ausgenommen dem User anlegen
+	 * @param con connection
+	 * @param lo LoginObject
+	 * @throws DAOException falls Login fehlschlaegt
+	 */
+    private void checkLogin(Connection con, LoginObject lo) throws DAOException{
 		String query = "SELECT id, AdressTyp FROM Adresse WHERE email=? and passwort=?;";
 
 		lo.setEnrichedLoginData(null);

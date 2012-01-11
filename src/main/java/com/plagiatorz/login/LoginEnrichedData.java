@@ -1,9 +1,9 @@
 package com.plagiatorz.login;
 
 /**
- * Wird beim ersten Login-Check abgefüllt
- * Gibt weitere Informationen über die Berechtigungen des Users
- * Keine Setter, da das Object nur beim Initialisieren abgefüllt werden darf
+ * Wird beim ersten Login-Check abgefuellt
+ * Gibt weitere Informationen ueber die Berechtigungen des Users
+ * Keine Setter, da das Object nur beim Initialisieren abgefuellt werden darf
  * @author MARIUS
  *
  */

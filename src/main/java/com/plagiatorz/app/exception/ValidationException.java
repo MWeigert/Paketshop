@@ -1,7 +1,7 @@
 package com.plagiatorz.app.exception;
 
 /**
- * Alle möglichen Übergabemasken eines Validierungs-Fehlers (z.B. Pflichtfeld ist leer)
+ * Alle moeglichen uebergabemasken eines Validierungs-Fehlers (z.B. Pflichtfeld ist leer)
  * @author MARIUS
  *
  */

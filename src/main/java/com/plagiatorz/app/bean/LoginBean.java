@@ -71,7 +71,7 @@ public class LoginBean extends BaseBean {
 			throw new ValidationException("Emailadresse leer");
 		}
 		else if(!Utils.checkRegex(email.getText(), "[\\.\\w\\_\\-]+[\\w]+@[\\.\\w\\_\\-]+\\.\\w{2,4}$")) {
-			throw new ValidationException("Ungültige Emailadresse");
+			throw new ValidationException("Ungueltige Emailadresse");
 		}
 		char[] pwStr = passwort.getPassword();
 		if(pwStr == null) {

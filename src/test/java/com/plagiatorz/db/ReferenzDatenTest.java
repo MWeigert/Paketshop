@@ -14,7 +14,7 @@ import com.plagiatorz.db.dto.ValuePairDTO;
 import com.plagiatorz.login.LoginObject;
 
 /**
- * stellt sicher, dass alle Referenzdaten-Queries Werte zurück geben
+ * stellt sicher, dass alle Referenzdaten-Queries Werte zurueck geben
  * 
  * @author MARIUS
  * 

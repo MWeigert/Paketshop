@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Benutzt für Referenz-Daten (Schlüssel, Anzeige-Value übergabe)
+ * Benutzt fuer Referenz-Daten (Schluessel, Anzeige-Value uebergabe)
  * @author MARIUS
  *
  */

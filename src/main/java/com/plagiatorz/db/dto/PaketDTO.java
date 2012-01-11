@@ -77,7 +77,7 @@ public class PaketDTO implements BaseDTO{
 
 	@Override
 	public void fillUpRecord(ResultSet result) throws SQLException {
-		// FIXME für get abfüllen
+		// FIXME fuer get abfuellen
 		
 	}
 

@@ -95,7 +95,7 @@ public class ClientGUI implements BaseGUIInterface{
 		gc.gridwidth = 3;
 		adressBean.getContentPanel().add(adressBean.getStrassenNr(), gc);
 		
-		// Fünfte Zeile mit Label Adress Zusatz
+		// Fuenfte Zeile mit Label Adress Zusatz
 		gc.gridy = 4;
 		gc.gridx = 0;
 		gc.gridwidth = 20;
@@ -155,7 +155,7 @@ public class ClientGUI implements BaseGUIInterface{
 		gc.gridy = 10;
 		adressBean.getContentPanel().add(adressBean.getTelefon(), gc);
 		
-		// Zwölfte Zeile Label Handy Nummer
+		// Zwoelfte Zeile Label Handy Nummer
 		gc.gridx = 0;
 		gc.gridy = 11;
 		JLabel handyLbl = new JLabel("Mobile");
@@ -172,7 +172,7 @@ public class ClientGUI implements BaseGUIInterface{
 		JLabel mailLbl = new JLabel("E-Mail");
 		adressBean.getContentPanel().add(mailLbl, gc);
 		
-		// Fünfzehnte Zeile Feld E-Mail
+		// Fuenfzehnte Zeile Feld E-Mail
 		gc.gridx = 0;
 		gc.gridy = 14;
 		adressBean.getContentPanel().add(adressBean.getEmail(), gc);

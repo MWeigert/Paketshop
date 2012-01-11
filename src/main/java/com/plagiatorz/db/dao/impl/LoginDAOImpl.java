@@ -6,7 +6,7 @@ import com.plagiatorz.db.dao.factory.DAOFactory;
 import com.plagiatorz.login.LoginObject;
 
 /**
- * Führt ein select 1 from dual aus, um ein Login durchzuführen
+ * Fuehrt ein select 1 from dual aus, um ein Login durchzufuehren
  * @author MARIUS
  *
  */

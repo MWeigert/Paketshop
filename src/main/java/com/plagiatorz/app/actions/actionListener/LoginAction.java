@@ -15,7 +15,7 @@ import com.plagiatorz.login.LoginObject;
 
 /**
  * LoginAction
- * Mögliche Tätigkeiten
+ * Moegliche Taetigkeiten
  * 	1. Neuen Benutzer anlegen
  *  2. erfolgreiches Login
  *  3. Login mit Fehlermeldung

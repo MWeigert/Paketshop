@@ -23,7 +23,7 @@ public abstract class DAOFactory {
     private static final String PROPERTY_PASSWORD = "password";
 
     /**
-     * Liest die Parameter aus dem daoProperties File und gibt eine DAOFactory zurück
+     * Liest die Parameter aus dem daoProperties File und gibt eine DAOFactory zurueck
      */
     public static DAOFactory getInstance() throws DAOConfigurationException {
 

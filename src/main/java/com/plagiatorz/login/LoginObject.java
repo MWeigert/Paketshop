@@ -1,7 +1,7 @@
 package com.plagiatorz.login;
 
 /**
- * Die vom User ausgefüllten Logininformationen (email,pw)
+ * Die vom User ausgefuellten Logininformationen (email,pw)
  * @author MARIUS
  *
  */
