@@ -1,13 +1,8 @@
-/**
- * 
- */
 package com.plagiatorz.app.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import com.plagiatorz.app.actions.actionListener.LoginAction;
-import com.plagiatorz.app.bean.LoginBean;
 import com.plagiatorz.app.bean.PaketBean;
 
 /**
@@ -15,6 +10,8 @@ import com.plagiatorz.app.bean.PaketBean;
  *
  */
 public class CreateParcelGUI implements BaseGUIInterface {
+
+	private PaketBean paketBean;
 
 	/**
 	 * 
