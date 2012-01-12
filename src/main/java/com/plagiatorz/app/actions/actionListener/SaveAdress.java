@@ -62,6 +62,7 @@ public class SaveAdress implements ActionListener {
 			try {
 				if(adress.getId() != 0) {
 					dao.updateAdress(Utils.getLoginObject(), adress);
+					JOptionPane.showMessageDialog(null, "Änderungen efolgreich gespeichert", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
 					dao.createAdress(null, adress);
@@ -69,7 +70,7 @@ public class SaveAdress implements ActionListener {
 				}
 			} catch (DAOException e1) {
 				if(StringUtils.equals(Constants.LOGINERROR, e1.getMessage())) {
-					JOptionPane.showMessageDialog(null, "User efolgreich angelegt", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, Constants.LOGINERROR, "Error", JOptionPane.ERROR_MESSAGE);
 				}
 				else {
 					e1.printStackTrace();

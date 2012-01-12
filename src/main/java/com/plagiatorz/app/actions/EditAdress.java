@@ -39,8 +39,6 @@ public class EditAdress {
 
 			DAOFactory factory = DAOFactory.getInstance();
 			AdressDAO dao = factory.getAdressDAO();
-
-			System.out.println(System.getProperty(Constants.EMAILPROPERTY));
 			
 			try {
 				LoginObject lo = Utils.getLoginObject();
