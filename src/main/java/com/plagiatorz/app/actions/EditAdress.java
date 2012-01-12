@@ -11,7 +11,6 @@ import com.plagiatorz.db.dao.AdressDAO;
 import com.plagiatorz.db.dao.exception.DAOException;
 import com.plagiatorz.db.dao.factory.DAOFactory;
 import com.plagiatorz.db.dto.AdressDTO;
-import com.plagiatorz.global.Constants;
 import com.plagiatorz.global.Utils;
 import com.plagiatorz.login.LoginObject;
 

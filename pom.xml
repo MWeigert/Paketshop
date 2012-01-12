@@ -50,6 +50,10 @@
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.5</version>
-		</dependency>
+		</dependency> <dependency>
+	      <groupId>org.jdesktop</groupId>
+	      <artifactId>swing-worker</artifactId>
+	      <version>1.1</version>
+	    </dependency>
 	</dependencies>
 </project>
