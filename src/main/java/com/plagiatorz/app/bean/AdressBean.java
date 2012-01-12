@@ -13,6 +13,7 @@ import com.plagiatorz.global.Utils;
 
 public class AdressBean extends BaseBean {
 
+	private int id;
 	private JTextField name = new JTextField();
 	private JTextField vorname = new JTextField();
 	private JTextField strasse = new JTextField();
@@ -32,6 +33,17 @@ public class AdressBean extends BaseBean {
 	public AdressBean(JFrame jFrame, JPanel jPanel) {
 		super(jFrame, jPanel);
 	}
+
+	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 
 	public JTextField getName() {
 		return name;

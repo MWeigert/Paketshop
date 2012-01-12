@@ -175,6 +175,9 @@ public class ClientGUI implements BaseGUIInterface{
 		// Fuenfzehnte Zeile Feld E-Mail
 		gc.gridx = 0;
 		gc.gridy = 14;
+		if(adressBean.getId() != 0) {
+			adressBean.getEmail().setEnabled(false);
+		}
 		adressBean.getContentPanel().add(adressBean.getEmail(), gc);
 		
 		// Sechszehnte Zeile Leerzeile

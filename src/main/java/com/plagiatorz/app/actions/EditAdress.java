@@ -20,6 +20,8 @@ import com.plagiatorz.login.LoginObject;
  * 1. Validierung (Popup mit Fehlerbeschreib, falls fehlgeschlagen)
  * 2. DTO abfuellen
  * 3. Save-Funktion aufrufen
+ * 		ist die AdressId = 0, so wird eine neue Adresse erstellt, 
+ * 		ansonsten eine bestehende updated
  * @author Plagiatorz
  *
  */
@@ -43,6 +45,7 @@ public class EditAdress {
 			try {
 				LoginObject lo = Utils.getLoginObject();
 				AdressDTO dto = dao.getAdressByEmail(lo, lo.getEmail());
+				adressBean.setId(dto.getId());
 				adressBean.getName().setText(dto.getName());
 				adressBean.getVorname().setText(dto.getVorname());
 				adressBean.getStrasse().setText(dto.getStrasse());
@@ -50,6 +53,7 @@ public class EditAdress {
 				adressBean.getLand().setText(dto.getLand());
 				adressBean.getPlz().setText(dto.getPlz());
 				adressBean.getOrt().setText(dto.getOrt());
+				adressBean.getMobile().setText(dto.getMobile());
 				adressBean.getTelefon().setText(dto.getTelefon());
 				adressBean.getEmail().setText(dto.getEmail());
 				adressBean.getPasswort().setText(dto.getPasswort());

@@ -14,6 +14,7 @@ import com.plagiatorz.db.dao.exception.DAOException;
 import com.plagiatorz.db.dao.factory.DAOFactory;
 import com.plagiatorz.db.dto.AdressDTO;
 import com.plagiatorz.global.Constants;
+import com.plagiatorz.global.Utils;
 
 /**
  * Speichert die neue Adresse
@@ -42,6 +43,7 @@ public class SaveAdress implements ActionListener {
 			adressBean.validate();
 				
 			AdressDTO adress = new AdressDTO();
+			adress.setId(adressBean.getId());
 			adress.setName(adressBean.getName().getText());
 			adress.setVorname(adressBean.getVorname().getText());
 			adress.setStrasse(adressBean.getStrasse().getText());
@@ -58,8 +60,13 @@ public class SaveAdress implements ActionListener {
 			AdressDAO dao = factory.getAdressDAO();
 			
 			try {
-				dao.createAdress(null, adress);
-				JOptionPane.showMessageDialog(null, "User efolgreich angelegt", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
+				if(adress.getId() != 0) {
+					dao.updateAdress(Utils.getLoginObject(), adress);
+				}
+				else {
+					dao.createAdress(null, adress);
+					JOptionPane.showMessageDialog(null, "User efolgreich angelegt", "Erfolg", JOptionPane.INFORMATION_MESSAGE);
+				}
 			} catch (DAOException e1) {
 				if(StringUtils.equals(Constants.LOGINERROR, e1.getMessage())) {
 					JOptionPane.showMessageDialog(null, "User efolgreich angelegt", "Erfolg", JOptionPane.INFORMATION_MESSAGE);

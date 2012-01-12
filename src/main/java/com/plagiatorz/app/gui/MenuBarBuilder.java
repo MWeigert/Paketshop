@@ -11,6 +11,10 @@ import com.plagiatorz.app.bean.BaseBean;
  */
 public final class MenuBarBuilder {
 
+	/**
+	 * Generiert den Navibar fuer den MenuBar
+	 * @param bean
+	 */
 	public static void buildMenubar(BaseBean bean) {
 		
 		NavigationAction action = new NavigationAction(bean);

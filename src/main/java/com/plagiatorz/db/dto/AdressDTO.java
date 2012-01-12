@@ -3,6 +3,10 @@ package com.plagiatorz.db.dto;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.commons.lang.StringUtils;
+
+import com.plagiatorz.login.LoginObject;
+
 /**
  * AdressDTO
  * !Achtung: PW wird aus Sicherheitsgruenden nicht abgefuellt
@@ -126,6 +130,12 @@ public class AdressDTO implements BaseDTO{
 		email = result.getString(12);
 		passwort = null;
 		
+	}
+	public void fillUpRecord(ResultSet rs, LoginObject lo) throws SQLException {
+		fillUpRecord(rs);
+		if(StringUtils.equals(this.getEmail(), lo.getEmail())) {
+			passwort = rs.getString(13);
+		}
 	}
 	
 }

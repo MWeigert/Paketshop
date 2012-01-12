@@ -87,10 +87,41 @@ public abstract class BaseDAOImpl implements BaseDAO{
 			
 		} catch (SQLException e) {
 			throw new DAOException(e.getCause());
+		} finally {
+			DaoUtil.close(connection);
 		}
 		
 		return id;
 	}
+
+	public void updateRecord(LoginObject loginObj, String query, Object[] values, Object[] where) throws DAOException {
+
+        Connection connection = daoFactory.getConnection();  
+        PreparedStatement preparedStatement = null;
+        
+		try {
+        	checkLogin(connection, loginObj);
+
+        	Object[] val = new Object[values.length+where.length];
+
+        	for(int i = 0; i< values.length; i++) {
+        		val[i] = values[i];
+        	}
+        	for(int i = val.length-1; i< val.length; i++) {
+        		val[i] = where[i-values.length];
+        	}
+        	
+			preparedStatement = DaoUtil.prepareStatement(connection, query, false, val);
+			
+			preparedStatement.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new DAOException(e.getCause());
+		} finally {
+			DaoUtil.close(connection);
+		}
+	}
+	
 	/**
 	 * Benutzer mit den uebergebenen Werten erstellen
 	 * @param adress Adresswerte
@@ -122,6 +153,8 @@ public abstract class BaseDAOImpl implements BaseDAO{
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DaoUtil.close(connection);
 		}
 		
 		return id;

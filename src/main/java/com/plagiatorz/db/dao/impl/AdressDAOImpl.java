@@ -17,6 +17,9 @@ public class AdressDAOImpl extends BaseDAOImpl implements AdressDAO{
 	
 	private static final String GETADRESSBYEMAIL = "SELECT * FROM Adresse where email=?";
 	private static final String GETADRESSLISTBYADRTYPE = "SELECT * FROM Adresse where adressTyp=?";
+	private static final String UPDADRESS = "UPDATE Adresse SET name = ?, vorname = ?, strasse = ?, strassenNr = ?, zusatzzeile = ?, land = ?,"
+																+"plz = ?, ort = ?, mobile = ?, telefonp = ?, email = ?, passwort = ?"
+											 +"WHERE id = ?";
 	
 	
 	public AdressDAOImpl(DAOFactory daoFactory) {
@@ -32,7 +35,7 @@ public class AdressDAOImpl extends BaseDAOImpl implements AdressDAO{
 		
 		try {
 			while(rs.next()) {
-				retVal.fillUpRecord(rs);
+				retVal.fillUpRecord(rs, lo);
 			}
 		} catch (SQLException e) {
 			throw new DAOException(e);
@@ -71,5 +74,16 @@ public class AdressDAOImpl extends BaseDAOImpl implements AdressDAO{
 		lo.setPassword(adress.getPasswort());
 		lo.setEnrichedLoginData(new LoginEnrichedData(id, Constants.DEFAULTADRESSTYP));
 	}
-    
+
+	@Override
+	public void updateAdress(LoginObject lo, AdressDTO adress)
+			throws DAOException {
+		
+		Object[] obj = new Object[]{adress.getName(),adress.getVorname(),adress.getStrasse(),adress.getStrassenNr()
+				,adress.getZusatzzeile(),adress.getLand(),adress.getPlz(),adress.getOrt(),adress.getMobile()
+				,adress.getTelefon(),adress.getEmail(),adress.getPasswort()};
+
+		super.updateRecord(lo, UPDADRESS, obj, new Object[]{adress.getId()});
+		
+	}
 }
