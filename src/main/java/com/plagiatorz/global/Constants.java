@@ -16,6 +16,7 @@ public final class Constants {
 	public final static String PWPROPERTY = "loginPW";
 	
 	//Navigation-Moeglichkeiten
+	public final static String LOGIN ="Login";
 	public final static String EDITUSER = "User bearbeiten";
 	public final static String ADDPAKET ="Paket hinzufuegen";
 }

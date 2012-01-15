@@ -51,8 +51,8 @@ public class EditPaket {
 //			adressBean.getEmail().setText(dto.getEmail());
 //			adressBean.getPasswort().setText(dto.getPasswort());
 			
-			ClientGUI gui = new ClientGUI(paketBean);
-			gui.displayContentPanel();
+//			ClientGUI gui = new ClientGUI(paketBean);
+//			gui.displayContentPanel();
 //		} catch (DAOException ex) {
 //			JOptionPane.showMessageDialog(null, ex.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
 //		}

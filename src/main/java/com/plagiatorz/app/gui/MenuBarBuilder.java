@@ -22,12 +22,14 @@ public final class MenuBarBuilder {
 		bean.getMenuBar().getStartMenu().setMnemonic('T');
 		bean.getMenuBar().getInfoMenu().setMnemonic('I');
 
+		bean.getMenuBar().getStartMenu().add(bean.getMenuBar().getLogin());
 		bean.getMenuBar().getStartMenu().add(bean.getMenuBar().getEditUser());
 		bean.getMenuBar().getStartMenu().add(bean.getMenuBar().getCreatePaket());
 
 		bean.getMenuBar().getBar().add(bean.getMenuBar().getStartMenu());
 		bean.getMenuBar().getBar().add(bean.getMenuBar().getInfoMenu());
-		
+
+		bean.getMenuBar().getLogin().addActionListener(action);
 		bean.getMenuBar().getCreatePaket().addActionListener(action);
 		bean.getMenuBar().getEditUser().addActionListener(action);
 		

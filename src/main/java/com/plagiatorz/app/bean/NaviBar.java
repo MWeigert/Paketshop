@@ -20,6 +20,15 @@ public class NaviBar{
 	private JMenu infoMenu = new JMenu("Info");
 	private JRadioButtonMenuItem editUser = new JRadioButtonMenuItem(Constants.EDITUSER);
 	private JRadioButtonMenuItem createPaket = new JRadioButtonMenuItem(Constants.ADDPAKET);
+	private JRadioButtonMenuItem login = new JRadioButtonMenuItem(Constants.LOGIN);
+
+	public JRadioButtonMenuItem getLogin() {
+		return login;
+	}
+
+	public void setLogin(JRadioButtonMenuItem login) {
+		this.login = login;
+	}
 
 	public NaviBar() {
 	}

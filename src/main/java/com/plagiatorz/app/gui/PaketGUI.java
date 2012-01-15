@@ -3,11 +3,9 @@ package com.plagiatorz.app.gui;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import com.plagiatorz.app.bean.PaketBean;
@@ -20,9 +18,9 @@ public class PaketGUI implements BaseGUIInterface {
 
 	private PaketBean paketBean;
 
-	public PaketGUI(JFrame jFrame, JPanel jPanel) {
+	public PaketGUI(PaketBean bean) {
 		super();
-		paketBean = new PaketBean(jFrame, jPanel);
+		paketBean = bean;
 	}
 
 	/*
@@ -30,6 +28,8 @@ public class PaketGUI implements BaseGUIInterface {
 	 */
 	@Override
 	public void displayContentPanel() {
+		MenuBarBuilder.buildMenubar(paketBean);
+		
 		paketBean.setContentPanel(new JPanel(new GridBagLayout()));
 		paketBean.getContentPanel().setBorder(new EmptyBorder(3, 3, 3, 3));
 
@@ -48,12 +48,10 @@ public class PaketGUI implements BaseGUIInterface {
 		paketBean.getContentPanel().add(paketIDLabel, gc);
 		
 		gc.gridx = 4;
-		JTextField paketIDField = new JTextField();
-		paketBean.getContentPanel().add(paketIDField, gc);
+		paketBean.getContentPanel().add(paketBean.getPaketID(), gc);
 		
 		gc.gridx = 10;
-		JTextField datumField = new JTextField();
-		paketBean.getContentPanel().add(datumField, gc);
+		paketBean.getContentPanel().add(paketBean.getEingangsDatum(), gc);
 		
 		// Zweite Zeile Kunde
 		gc.gridy = 1;
@@ -62,8 +60,7 @@ public class PaketGUI implements BaseGUIInterface {
 		paketBean.getContentPanel().add(kundenLabel, gc);
 		
 		gc.gridx = 4;
-		JComboBox kundenCBox = new JComboBox();
-		paketBean.getContentPanel().add(kundenCBox, gc);
+		paketBean.getContentPanel().add(paketBean.getKunde(), gc);
 		
 		// Dritte Zeile Kategorie
 		gc.gridy = 2;
@@ -72,8 +69,7 @@ public class PaketGUI implements BaseGUIInterface {
 		paketBean.getContentPanel().add(kategorieLabel, gc);
 		
 		gc.gridx = 4;
-		JComboBox kategorieCBox = new JComboBox();
-		paketBean.getContentPanel().add(kategorieCBox, gc);
+		paketBean.getContentPanel().add(paketBean.getKategorie(), gc);
 		
 		// Vierte Zeile Paketstatus
 		gc.gridy = 3;
@@ -82,8 +78,7 @@ public class PaketGUI implements BaseGUIInterface {
 		paketBean.getContentPanel().add(statusLabel, gc);
 		
 		gc.gridx = 4;
-		JComboBox statusCBox = new JComboBox();
-		paketBean.getContentPanel().add(statusCBox, gc);
+		paketBean.getContentPanel().add(paketBean.getStatus(), gc);
 		
 		// Fuenfte Zeile Lagerort
 		gc.gridy = 4;
@@ -92,8 +87,9 @@ public class PaketGUI implements BaseGUIInterface {
 		paketBean.getContentPanel().add(lagerLabel, gc);
 		
 		gc.gridx = 4;
-		JComboBox lagerCBox = new JComboBox();
-		paketBean.getContentPanel().add(lagerCBox, gc);
+		paketBean.getContentPanel().add(paketBean.getLager(), gc);
+		
+		paketBean.setFrameVisible();
 	}
 
 }
