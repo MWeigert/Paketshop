@@ -4,29 +4,28 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import com.plagiatorz.app.bean.PaketBean;
 
 /**
  * @author M. Weigert
- *
+ * Design von M. Ott -> https://zhaw.mybalsamiq.com/projects/mdp_paketshop/Paket-Erfassung
  */
 public class PaketGUI implements BaseGUIInterface {
 
 	private PaketBean paketBean;
 
-	/**
-	 * 
-	 */
 	public PaketGUI(JFrame jFrame, JPanel jPanel) {
 		super();
 		paketBean = new PaketBean(jFrame, jPanel);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.plagiatorz.app.gui.BaseGUIInterface#displayContentPanel()
+	/*
+	 * Allgemeiner Teil Panel wird erstellt und paketBean übergeben
 	 */
 	@Override
 	public void displayContentPanel() {
@@ -41,9 +40,20 @@ public class PaketGUI implements BaseGUIInterface {
 		gc.gridy = 0;
 		gc.gridx = 0;
 		gc.gridheight = 1;
-		gc.gridwidth = 10;
+		gc.gridwidth = 5;
 		
 		// Erste Zeile mit Paket-ID und Datum
+		JLabel paketIDLabel = new JLabel("Paket ID");
+		paketBean.getFrame().add(paketIDLabel);
+		
+		gc.gridx = 4;
+		JTextField paketIDField = new JTextField();
+		paketBean.getFrame().add(paketIDField);
+		
+		gc.gridx = 10;
+		JTextField datumField = new JTextField();
+		paketBean.getFrame().add(datumField);
+		
 		
 
 	}

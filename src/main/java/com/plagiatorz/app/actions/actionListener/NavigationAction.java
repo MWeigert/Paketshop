@@ -23,6 +23,8 @@ public class NavigationAction implements ActionListener {
 		if(StringUtils.equals(Constants.EDITUSER,event.getActionCommand())) {
 			EditAdress action = new EditAdress(bean.getFrame(), bean.getContentPanel());
 			action.execute();
+		} else if (StringUtils.equals(Constants.ADDPAKET, event.getActionCommand())) {
+			
 		}
 
 	}

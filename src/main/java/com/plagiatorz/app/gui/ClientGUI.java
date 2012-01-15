@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.plagiatorz.app.actions.actionListener.SaveAdress;
 import com.plagiatorz.app.bean.AdressBean;
+import com.plagiatorz.app.bean.PaketBean;
 
 /**
  * Anzeige der Adresse
@@ -24,7 +25,7 @@ public class ClientGUI implements BaseGUIInterface{
 	
 	private AdressBean adressBean;
 	private SaveAdress save;
-
+	private PaketBean paketBean;
 	
 	public ClientGUI(JFrame jFrame, JPanel jPanel) {
 		super();
@@ -38,7 +39,11 @@ public class ClientGUI implements BaseGUIInterface{
 		save = new SaveAdress(adressBean);
 	}
 
-
+	public ClientGUI(PaketBean bean) {
+		super();
+		paketBean = bean;
+	}
+	
 	public void displayContentPanel() {
 		// Allgemeiner Teil Frame und Panel werden erstellt & konfiguriert
 		
