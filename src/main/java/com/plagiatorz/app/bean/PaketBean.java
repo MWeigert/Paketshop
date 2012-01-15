@@ -9,6 +9,8 @@ import com.plagiatorz.app.exception.ValidationException;
 
 public class PaketBean extends BaseBean {
 
+	private JTextField paketID = new JTextField();
+	private JTextField eingangsDatum = new JTextField();
 	private JTextField kunde = new JTextField();
 	private JComboBox kategorie = new JComboBox();
 	private JComboBox status = new JComboBox();
@@ -24,7 +26,22 @@ public class PaketBean extends BaseBean {
 		this.status = status;
 	}
 
-
+	public JTextField getPaketID() {
+		return paketID;
+	}
+	
+	public void setPaketID(JTextField paketID) {
+		this.paketID = paketID;
+	}
+	
+	public JTextField getEingangsDatum() {
+		return eingangsDatum;
+	}
+	
+	public void setEingangsDatum(JTextField eingangsDatum) {
+		this.eingangsDatum = eingangsDatum;
+	}
+	
 	public JTextField getKunde() {
 		return kunde;
 	}

@@ -4,17 +4,18 @@
 package com.plagiatorz.app.actions;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.plagiatorz.app.bean.PaketBean;
 import com.plagiatorz.app.gui.ClientGUI;
-import com.plagiatorz.db.dao.AdressDAO;
-import com.plagiatorz.db.dao.exception.DAOException;
-import com.plagiatorz.db.dao.factory.DAOFactory;
-import com.plagiatorz.db.dto.AdressDTO;
-import com.plagiatorz.global.Utils;
-import com.plagiatorz.login.LoginObject;
+//import com.plagiatorz.db.dao.AdressDAO;
+//import com.plagiatorz.db.dao.exception.DAOException;
+//import com.plagiatorz.db.dao.factory.DAOFactory;
+//import com.plagiatorz.db.dto.AdressDTO;
+//import com.plagiatorz.db.dto.PaketDTO;
+//import com.plagiatorz.global.Utils;
+//import com.plagiatorz.login.LoginObject;
 
 /**
  * @author M. Weigert
@@ -31,12 +32,12 @@ public class EditPaket {
 
 	public void execute() {
 
-		DAOFactory factory = DAOFactory.getInstance();
-		AdressDAO dao = factory.getAdressDAO();
+//		DAOFactory factory = DAOFactory.getInstance();
+//		AdressDAO dao = factory.getAdressDAO();
 		
-		try {
-			LoginObject lo = Utils.getLoginObject();
-			AdressDTO dto = dao.getAdressByEmail(lo, lo.getEmail());
+//		try {
+//			LoginObject lo = Utils.getLoginObject();
+//			PaketDTO dto = dao.getAdressByEmail(lo, lo.getEmail());
 //			adressBean.setId(dto.getId());
 //			adressBean.getName().setText(dto.getName());
 //			adressBean.getVorname().setText(dto.getVorname());
@@ -52,8 +53,8 @@ public class EditPaket {
 			
 			ClientGUI gui = new ClientGUI(paketBean);
 			gui.displayContentPanel();
-		} catch (DAOException ex) {
-			JOptionPane.showMessageDialog(null, ex.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
-		}
-	
+//		} catch (DAOException ex) {
+//			JOptionPane.showMessageDialog(null, ex.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
+//		}
+	}
 }
